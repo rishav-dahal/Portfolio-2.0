@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Rishav Dahal</title>
+    <link>//localhost:1313/projects/</link>
+    <description>Recent content in Projects on Rishav Dahal</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
+    <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OCR Code Compiler</title>
+      <link>//localhost:1313/projects/ocr/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>//localhost:1313/projects/ocr/</guid>
+      <description>&lt;h1 id=&#34;ocr-code-compiler-project&#34;&gt;OCR Code Compiler Project&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;OCR Code Compiler&lt;/strong&gt; is a project designed to improve the accuracy and efficiency of Optical Character Recognition (OCR) for document images. This system leverages advanced pre-processing techniques and intelligent code compilation to provide superior OCR results.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Image Preprocessing:&lt;/strong&gt; Implements a novel pre-processing approach to enhance the clarity of document images.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OCR Integration:&lt;/strong&gt; Seamlessly integrates with state-of-the-art OCR libraries to extract text from documents.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code Compilation:&lt;/strong&gt; Supports multiple languages for backend processing, including Python, C++, and Java, ensuring optimal performance for OCR tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
+&lt;p&gt;The main goal of this project is to improve OCR accuracy, particularly for documents with complex layouts or degraded quality, through intelligent image pre-processing and powerful code compilation techniques.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

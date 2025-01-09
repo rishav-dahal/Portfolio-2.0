@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blogs on Rishav Dahal</title>
+    <link>//localhost:1313/blogs/</link>
+    <description>Recent content in Blogs on Rishav Dahal</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
+    <atom:link href="//localhost:1313/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improving OCR Accuracy on Document Images</title>
+      <link>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</guid>
+      <description>&lt;h1 id=&#34;improving-ocr-accuracy-on-document-images-a-step-by-step-approach&#34;&gt;Improving OCR Accuracy on Document Images: A Step-by-Step Approach&lt;/h1&gt;
+&lt;p&gt;Optical Character Recognition (OCR) is revolutionizing the way we digitize and process documents. Whether it’s converting a scanned document into editable text or extracting data from receipts, OCR technology is increasingly relied upon across industries. However, one of the main challenges faced by OCR systems is their accuracy, especially when dealing with noisy or poorly scanned images. In this blog, I’ll walk you through the techniques I used to improve OCR accuracy on document images by leveraging pre-processing methods.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

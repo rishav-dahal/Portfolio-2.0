@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rishav Dahal</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Rishav Dahal</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
+&lt;p&gt;Hello! I’m a software engineer based in Nepal with a passion for developing innovative and efficient solutions. With experience in web development, I work with Django and React to create dynamic and scalable web applications.&lt;/p&gt;
+&lt;h2 id=&#34;skills--expertise&#34;&gt;Skills &amp;amp; Expertise&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Web Development&lt;/strong&gt;: Flask, Django, Tailwind CSS, Flowbite&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backend Development&lt;/strong&gt;: Python ,JAVA&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Frontend Development&lt;/strong&gt;: JavaScript, CSS, HTML&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database Management&lt;/strong&gt;: Experience with large datasets and REST APIs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication &amp;amp; Security&lt;/strong&gt;: JWT, CSRF&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Machine Learning&lt;/strong&gt;: Working with pre-processing techniques for document images, Objectdetection, and image denoising&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Software Engineering&lt;/strong&gt;: Compilation of Python, C, C++, Java, and JavaScript code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OCR Accuracy&lt;/strong&gt;: Involved in a project that improves OCR accuracy for document images through a novel pre-processing approach.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FlightAware FlightFeeder&lt;/strong&gt;: Working with the FlightAware FlightFeeder kit to explore aviation data.
+Feel free to reach out to me through &lt;a href=&#34;https://www.linkedin.com/in/risaavdahal/&#34;&gt;LinkedIn&lt;/a&gt; or &lt;a href=&#34;mailto:contact@rishavdahal.com.np&#34;&gt;Email&lt;/a&gt; for collaborations or questions!&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Improving OCR Accuracy on Document Images</title>
+      <link>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</guid>
+      <description>&lt;h1 id=&#34;improving-ocr-accuracy-on-document-images-a-step-by-step-approach&#34;&gt;Improving OCR Accuracy on Document Images: A Step-by-Step Approach&lt;/h1&gt;
+&lt;p&gt;Optical Character Recognition (OCR) is revolutionizing the way we digitize and process documents. Whether it’s converting a scanned document into editable text or extracting data from receipts, OCR technology is increasingly relied upon across industries. However, one of the main challenges faced by OCR systems is their accuracy, especially when dealing with noisy or poorly scanned images. In this blog, I’ll walk you through the techniques I used to improve OCR accuracy on document images by leveraging pre-processing methods.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OCR Code Compiler</title>
+      <link>//localhost:1313/projects/ocr/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>//localhost:1313/projects/ocr/</guid>
+      <description>&lt;h1 id=&#34;ocr-code-compiler-project&#34;&gt;OCR Code Compiler Project&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;OCR Code Compiler&lt;/strong&gt; is a project designed to improve the accuracy and efficiency of Optical Character Recognition (OCR) for document images. This system leverages advanced pre-processing techniques and intelligent code compilation to provide superior OCR results.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Image Preprocessing:&lt;/strong&gt; Implements a novel pre-processing approach to enhance the clarity of document images.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OCR Integration:&lt;/strong&gt; Seamlessly integrates with state-of-the-art OCR libraries to extract text from documents.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code Compilation:&lt;/strong&gt; Supports multiple languages for backend processing, including Python, C++, and Java, ensuring optimal performance for OCR tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
+&lt;p&gt;The main goal of this project is to improve OCR accuracy, particularly for documents with complex layouts or degraded quality, through intelligent image pre-processing and powerful code compilation techniques.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -16,6 +16,13 @@ minify:
   minifyOutput: true
 
 params:
+  assets:
+      favicon: "favicon.ico"
+      favicon16x16: "favicon-16x16.png"
+      favicon32x32: "favicon-32x32.png"
+      apple_touch_icon: "apple-touch-icon.png"
+      theme_color: "#2e2e33"
+      msapplication_TileColor: "#2e2e33"
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Rishav
   description: "This is the website of Rishav Dahal"
@@ -115,3 +122,4 @@ menu:
       url: /projects/
       weight: 2
 
+  

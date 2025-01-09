@@ -55,8 +55,9 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: "Welcome! \U0001F44B"
-    subtitle: "This is the website of **Rishav Dahal**."
+    title: "NAMASTE ! \U0001F64F"
+    subtitle: "Welcome to **Rishav Dahal’s** personal website 
+    your gateway to my blogs, projects, and more!"
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120

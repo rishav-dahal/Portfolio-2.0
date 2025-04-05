@@ -42,6 +42,6 @@ I'm a passionate **Software Engineering student** at Nepal College of Informatio
 
 **Let's connect!**  
 📧 [workwithrisaav@gmail.com](mailto:workwithrisaav@gmail.com) | 🌐 [rishavdahal.com.np](https://rishavdahal.com.np)  
-💼 [LinkedIn](https://linkedin.com/in/risaavdahal) | 🐙 [GitHub](https://github.com/risaavdahal)  
+💼 [LinkedIn](https://linkedin.com/in/risaavdahal) | 🐙 [GitHub](https://github.com/rishav-dahal)  
 
 *"Turning ideas into impact, one line of code at a time."*

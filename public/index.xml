@@ -9,30 +9,6 @@
     <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>//localhost:1313/about/</link>
-      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
-      <guid>//localhost:1313/about/</guid>
-      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
-&lt;p&gt;Hello! I’m a software engineer based in Nepal with a passion for developing innovative and efficient solutions. With experience in web development, I work with Django and React to create dynamic and scalable web applications.&lt;/p&gt;
-&lt;h2 id=&#34;skills--expertise&#34;&gt;Skills &amp;amp; Expertise&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Web Development&lt;/strong&gt;: Flask, Django, Tailwind CSS, Flowbite&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Backend Development&lt;/strong&gt;: Python ,JAVA&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Frontend Development&lt;/strong&gt;: JavaScript, CSS, HTML&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Database Management&lt;/strong&gt;: Experience with large datasets and REST APIs&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Authentication &amp;amp; Security&lt;/strong&gt;: JWT, CSRF&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Machine Learning&lt;/strong&gt;: Working with pre-processing techniques for document images, Objectdetection, and image denoising&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Software Engineering&lt;/strong&gt;: Compilation of Python, C, C++, Java, and JavaScript code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;OCR Accuracy&lt;/strong&gt;: Involved in a project that improves OCR accuracy for document images through a novel pre-processing approach.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;FlightAware FlightFeeder&lt;/strong&gt;: Working with the FlightAware FlightFeeder kit to explore aviation data.
-Feel free to reach out to me through &lt;a href=&#34;https://www.linkedin.com/in/risaavdahal/&#34;&gt;LinkedIn&lt;/a&gt; or &lt;a href=&#34;mailto:contact@rishavdahal.com.np&#34;&gt;Email&lt;/a&gt; for collaborations or questions!&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
       <title>Improving OCR Accuracy on Document Images</title>
       <link>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
@@ -45,17 +21,39 @@ Feel free to reach out to me through &lt;a href=&#34;https://www.linkedin.com/in
       <link>//localhost:1313/projects/ocr/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
       <guid>//localhost:1313/projects/ocr/</guid>
-      <description>&lt;h1 id=&#34;ocr-code-compiler-project&#34;&gt;OCR Code Compiler Project&lt;/h1&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;OCR Code Compiler&lt;/strong&gt; is a project designed to improve the accuracy and efficiency of Optical Character Recognition (OCR) for document images. This system leverages advanced pre-processing techniques and intelligent code compilation to provide superior OCR results.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;
+&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;
+&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;
+&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Image Preprocessing:&lt;/strong&gt; Implements a novel pre-processing approach to enhance the clarity of document images.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;OCR Integration:&lt;/strong&gt; Seamlessly integrates with state-of-the-art OCR libraries to extract text from documents.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Code Compilation:&lt;/strong&gt; Supports multiple languages for backend processing, including Python, C++, and Java, ensuring optimal performance for OCR tasks.&lt;/li&gt;
+&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;
+&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;
+&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
-&lt;p&gt;The main goal of this project is to improve OCR accuracy, particularly for documents with complex layouts or degraded quality, through intelligent image pre-processing and powerful code compilation techniques.&lt;/p&gt;</description>
+&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;hello-im-rishav-dahal-&#34;&gt;Hello, I&amp;rsquo;m Rishav Dahal! 👋&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m a passionate &lt;strong&gt;Software Engineering student&lt;/strong&gt; at Nepal College of Information Technology (NCIT) with a strong interest in &lt;strong&gt;web development, AI, and creative problem-solving&lt;/strong&gt;. Currently based in Bhaktapur, Nepal, I thrive on building innovative projects that bridge technology and real-world needs.&lt;/p&gt;
+&lt;h3 id=&#34;-what-i-do&#34;&gt;🔧 What I Do&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Full-Stack Development&lt;/strong&gt;: Crafting interactive websites and software applications using Python, Django, and modern frameworks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI &amp;amp; Machine Learning&lt;/strong&gt;: Developing solutions like medical chatbots, attendance systems, and OCR tools with NLP and computer vision.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Creative Design&lt;/strong&gt;: Designing graphics (Figma) and editing videos to bring ideas to life.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-projects--achievements&#34;&gt;🚀 Projects &amp;amp; Achievements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Built &lt;strong&gt;Shiskhya&lt;/strong&gt; (lecture summarization software) and &lt;strong&gt;Swashya&lt;/strong&gt; (centralized medical records app) during hackathons.&lt;/li&gt;
+&lt;li&gt;Created a &lt;strong&gt;BERT-based medical chatbot&lt;/strong&gt; and an &lt;strong&gt;AI attendance system&lt;/strong&gt; using OpenCV and deep learning.&lt;/li&gt;
+&lt;li&gt;Volunteered as an IT Cordinator and Graphic Designer for &lt;strong&gt;HULT Prize at NCIT 2022&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-technical-skills&#34;&gt;🛠️ Technical Skills&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;
+&lt;code&gt;Python&lt;/code&gt; &lt;code&gt;Java&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;C++&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

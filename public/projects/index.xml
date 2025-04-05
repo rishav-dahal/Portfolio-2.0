@@ -13,17 +13,16 @@
       <link>//localhost:1313/projects/ocr/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
       <guid>//localhost:1313/projects/ocr/</guid>
-      <description>&lt;h1 id=&#34;ocr-code-compiler-project&#34;&gt;OCR Code Compiler Project&lt;/h1&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;OCR Code Compiler&lt;/strong&gt; is a project designed to improve the accuracy and efficiency of Optical Character Recognition (OCR) for document images. This system leverages advanced pre-processing techniques and intelligent code compilation to provide superior OCR results.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;
+&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;
+&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;
+&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Image Preprocessing:&lt;/strong&gt; Implements a novel pre-processing approach to enhance the clarity of document images.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;OCR Integration:&lt;/strong&gt; Seamlessly integrates with state-of-the-art OCR libraries to extract text from documents.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Code Compilation:&lt;/strong&gt; Supports multiple languages for backend processing, including Python, C++, and Java, ensuring optimal performance for OCR tasks.&lt;/li&gt;
+&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;
+&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;
+&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
-&lt;p&gt;The main goal of this project is to improve OCR accuracy, particularly for documents with complex layouts or degraded quality, through intelligent image pre-processing and powerful code compilation techniques.&lt;/p&gt;</description>
+&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

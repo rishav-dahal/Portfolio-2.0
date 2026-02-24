@@ -116,27 +116,27 @@ menu:
   main:
     - identifier: blog
       name: Blogs
-      url: /blogs/
+      url: blogs/
       weight: 1
     - identifier: projects
       name: Projects
-      url: /projects/
+      url: projects/
       weight: 2
     - identifier: about
       name: About
-      url: /about/
+      url: about/
       weight: 3
     - identifier: contact
       name: Contact
-      url: /contact/
+      url: contact/
       weight: 4
     - identifier: privacy-policy
       name: Privacy
-      url: /privacy-policy/
+      url: privacy-policy/
       weight: 5
     - identifier: terms-and-conditions
       name: Terms
-      url: /terms-and-conditions/
+      url: terms-and-conditions/
       weight: 6
 
   

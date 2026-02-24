@@ -1,8 +1,9 @@
 ---
 title: "Google AdSense Approval Checklist for 2026"
-date: 2026-02-24T12:00:00+05:45
+date: 2026-02-23T10:00:00+05:45
 slug: google-adsense-approval-checklist-2026
-category: blog
+categories:
+  - Blog
 summary: "A practical AdSense approval checklist to avoid low-value content and policy rejection issues in 2026."
 description: "Learn the essential pages, content standards, technical requirements, and policy checks to improve your AdSense approval chances in 2026."
 cover:

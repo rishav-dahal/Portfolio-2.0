@@ -1,5 +1,5 @@
 languageCode: en-us
-baseURL: "rishavdahal.com.np"
+baseURL: "https://rishavdahal.com.np/"
 title: Rishav Dahal
 paginate: 5
 theme: PaperMod
@@ -24,9 +24,9 @@ params:
       theme_color: "#2e2e33"
       msapplication_TileColor: "#2e2e33"
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Rishav
-  description: "This is the website of Rishav Dahal"
-  keywords: [Blog, Portfolio, Backend Development , AI, Machine Learning] 
+  title: Rishav Dahal
+  description: "Portfolio, blogs, and projects by Rishav Dahal on backend engineering, AI, and practical software development."
+  keywords: [Blog, Portfolio, Backend Development, AI, Machine Learning, Software Engineering]
   author: Rishav Dahal
   # author: ["Me", "You"] # multiple authors
   #images: ["<link or path of image for opengraph, twitter-cards>"]
@@ -38,6 +38,7 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
+  ShowWordCount: true
   ShowCodeCopyButtons: false
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -55,9 +56,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: "NAMASTE ! \U0001F64F"
-    subtitle: "Welcome to **Rishav Dahal’s** personal website 
-    your gateway to my blogs, projects, and more!"
+    title: "Building useful software with AI & backend systems"
+    subtitle: "I’m **Rishav Dahal**. I share practical blogs, hands-on projects, and experiments in software engineering, machine learning, and product-focused development."
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
@@ -67,6 +67,8 @@ params:
         url: blogs
       - name: Projects
         url: projects
+      - name: Contact
+        url: contact
 
   # home-info mode
   homeInfoParams:
@@ -74,6 +76,8 @@ params:
     Content: "This is the website of **Rishav Dahal**."
 
   socialIcons:
+    - name: email
+      url: "mailto:workwithrisaav@gmail.com"
     - name: medium
       url: "https://risaav.medium.com/"
     - name: linkedin
@@ -110,10 +114,6 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 4
     - identifier: blog
       name: Blogs
       url: /blogs/
@@ -122,5 +122,21 @@ menu:
       name: Projects
       url: /projects/
       weight: 2
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 3
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 4
+    - identifier: privacy-policy
+      name: Privacy
+      url: /privacy-policy/
+      weight: 5
+    - identifier: terms-and-conditions
+      name: Terms
+      url: /terms-and-conditions/
+      weight: 6
 
   

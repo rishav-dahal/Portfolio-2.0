@@ -6,10 +6,10 @@ category: blog
 summary: "How I built an AI-powered tool to generate recipes from fridge photos using Gemini, RAG, and structured outputs."
 description: "Discover how generative AI can turn random fridge ingredients into creative recipes. Learn about image analysis, structured outputs, and retrieval-augmented generation."
 cover:
-image: https://cdn.rishavdahal.com.np/receipe.jpeg
-alt: "AI-generated recipe illustration"
-caption: "Recipe generator powered by generative AI"
-relative: true
+   image: "https://cdn.rishavdahal.com.np/receipe.jpeg"
+   alt: "AI-generated recipe illustration"
+   caption: "Recipe generator powered by generative AI"
+   relative : false
 showtoc: true
 draft: false
 tags: ["AI", "recipes", "machine learning", "Gemini", "RAG"]

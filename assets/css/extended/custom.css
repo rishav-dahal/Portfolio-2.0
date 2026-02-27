@@ -1,0 +1,49 @@
+:root {
+  --main-width: 900px;
+  --header-height: 72px;
+  --radius: 10px;
+}
+
+.profile_inner img {
+  border: 2px solid var(--border);
+}
+
+.post-entry,
+.first-entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.post-entry:hover,
+.first-entry:hover {
+  transform: translateY(-2px);
+  border-color: var(--secondary);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.entry-header h2 {
+  line-height: 1.35;
+}
+
+.entry-content {
+  line-height: 1.65;
+}
+
+#menu a {
+  font-weight: 600;
+}
+
+.social-icons a {
+  transition: transform 0.18s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --main-width: 95%;
+  }
+}

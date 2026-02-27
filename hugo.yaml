@@ -16,13 +16,28 @@ minify:
   minifyOutput: true
 
 params:
+  giscus:
+    repo: rishav-dahal/Portfolio-2.0
+    repo_id: R_kgDONn0wnA
+    category: General
+    category_id: DIC_kwDONn0wnM4C3WQS
+    mapping: pathname
+    strict: 0
+    reactions_enabled: 1
+    emit_metadata: 0
+    input_position: top
+    theme: preferred_color_scheme
+    lang: en
+    loading: lazy
+
   assets:
       favicon: "favicon.ico"
       favicon16x16: "favicon-16x16.png"
       favicon32x32: "favicon-32x32.png"
       apple_touch_icon: "apple-touch-icon.png"
-      theme_color: "#2e2e33"
-      msapplication_TileColor: "#2e2e33"
+      theme_color: "#0057b8" # Custom blue
+      msapplication_TileColor: "#0057b8"
+
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Rishav Dahal
   description: "Portfolio, blogs, and projects by Rishav Dahal on backend engineering, AI, and practical software development."
@@ -42,7 +57,7 @@ params:
   ShowCodeCopyButtons: false
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: false
@@ -56,8 +71,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: "Building useful software with AI & backend systems"
-    subtitle: "I’m **Rishav Dahal**. I share practical blogs, hands-on projects, and experiments in software engineering, machine learning, and product-focused development."
+    title: "Hi, I'm Rishav Dahal 👋"
+    subtitle: "Welcome to my digital lab! I build practical AI, backend systems, and share hands-on projects, blogs, and experiments in software engineering and machine learning."
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
@@ -72,8 +87,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Welcome! \U0001F44B"
-    Content: "This is the website of **Rishav Dahal**."
+    Title: "👋 Welcome to Rishav's Portfolio"
+    Content: "Explore my projects, blogs, and experiments in AI, backend engineering, and practical software development."
 
   socialIcons:
     - name: email
@@ -84,8 +99,8 @@ params:
       url: "https://www.linkedin.com/in/risaavdahal/"
     - name: github
       url: "https://github.com/rishav-dahal"
-    - name: paypal
-      url: "https://www.paypal.com/donate/?hosted_button_id=B4EKUAXU9F2GL"
+    - name: dlsurf
+      url: "https://rishav.dl.surf/"
 
   analytics:
     # google:
@@ -126,17 +141,5 @@ menu:
       name: About
       url: about/
       weight: 3
-    - identifier: contact
-      name: Contact
-      url: contact/
-      weight: 4
-    - identifier: privacy-policy
-      name: Privacy
-      url: privacy-policy/
-      weight: 5
-    - identifier: terms-and-conditions
-      name: Terms
-      url: terms-and-conditions/
-      weight: 6
 
   

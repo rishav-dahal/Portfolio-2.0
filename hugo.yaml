@@ -1,7 +1,8 @@
 languageCode: en-us
 baseURL: "https://rishavdahal.com.np/"
 title: Rishav Dahal
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -31,12 +32,13 @@ params:
     loading: lazy
 
   assets:
-      favicon: "favicon.ico"
-      favicon16x16: "favicon-16x16.png"
-      favicon32x32: "favicon-32x32.png"
-      apple_touch_icon: "apple-touch-icon.png"
-      theme_color: "#0057b8" # Custom blue
-      msapplication_TileColor: "#0057b8"
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    theme_color: "#0057b8" # Custom blue
+    msapplication_TileColor: "#0057b8"
+    disableFingerprinting: true
 
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Rishav Dahal
@@ -107,8 +109,8 @@ params:
     #   SiteVerificationTag: ""
 
   cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
     hiddenInSingle: false # hide on single page
 
 

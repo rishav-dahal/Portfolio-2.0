@@ -2,72 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/blog/</loc>
+    <loc>https://rishavdahal.com.np/categories/blog/</loc>
     <lastmod>2026-02-23T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/</loc>
+    <loc>https://rishavdahal.com.np/blogs/</loc>
     <lastmod>2026-02-23T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://rishavdahal.com.np/categories/</loc>
     <lastmod>2026-02-23T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/google-adsense-approval-checklist-2026/</loc>
+    <loc>https://rishavdahal.com.np/blogs/google-adsense-approval-checklist-2026/</loc>
     <lastmod>2026-02-23T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://rishavdahal.com.np/</loc>
     <lastmod>2026-02-23T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/terms-and-conditions/</loc>
+    <loc>https://rishavdahal.com.np/terms-and-conditions/</loc>
     <lastmod>2025-02-24T12:24:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://rishavdahal.com.np/contact/</loc>
     <lastmod>2025-02-24T12:22:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/privacy-policy/</loc>
+    <loc>https://rishavdahal.com.np/privacy-policy/</loc>
     <lastmod>2025-02-24T12:20:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/lan-todo-manager/</loc>
+    <loc>https://rishavdahal.com.np/projects/lan-todo-manager/</loc>
     <lastmod>2025-01-10T11:30:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://rishavdahal.com.np/projects/</loc>
     <lastmod>2025-01-10T11:30:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/modular-query-refinement/</loc>
+    <loc>https://rishavdahal.com.np/projects/modular-query-refinement/</loc>
     <lastmod>2025-01-10T11:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/cgpa-calculator/</loc>
+    <loc>https://rishavdahal.com.np/projects/cgpa-calculator/</loc>
     <lastmod>2025-01-10T10:30:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/face-recognition-attendance-system/</loc>
+    <loc>https://rishavdahal.com.np/projects/face-recognition-attendance-system/</loc>
     <lastmod>2025-01-10T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://rishavdahal.com.np/tags/ai/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/building-a-recipe-generator-with-generative-ai/</loc>
+    <loc>https://rishavdahal.com.np/blogs/building-a-recipe-generator-with-generative-ai/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gemini/</loc>
+    <loc>https://rishavdahal.com.np/tags/gemini/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</loc>
+    <loc>https://rishavdahal.com.np/blogs/improving-ocr-accuracy-on-document-images/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/machine-learning/</loc>
+    <loc>https://rishavdahal.com.np/tags/machine-learning/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/ocr/</loc>
+    <loc>https://rishavdahal.com.np/projects/ocr/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rag/</loc>
+    <loc>https://rishavdahal.com.np/tags/rag/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/recipes/</loc>
+    <loc>https://rishavdahal.com.np/tags/recipes/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://rishavdahal.com.np/tags/</loc>
     <lastmod>2025-01-09T11:32:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://rishavdahal.com.np/404/</loc>
+  </url><url>
+    <loc>https://rishavdahal.com.np/about/</loc>
   </url>
 </urlset>

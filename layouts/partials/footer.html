@@ -1,20 +1,14 @@
 {{- if not (.Param "hideFooter") }}
-<footer class="footer" style="text-align:center; margin:2em 0; font-size:0.95em; color:var(--secondary);">
-  <div style="margin-bottom:0.5em;">
+<footer class="footer"
+  style="text-align:center; margin:2em 0; font-size:0.95em; color:var(--secondary); display:flex; flex-direction:column; gap:0.5em; align-items:center;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.5em; margin-bottom:0.2em;">
     <a href="/privacy-policy/">Privacy Policy</a> |
     <a href="/terms-and-conditions/">Terms &amp; Conditions</a> |
     <a href="/contact/">Contact</a> |
     <a href="/blogs/index.xml" title="Blogs RSS Feed">Blogs RSS</a> |
     <a href="/projects/index.xml" title="Projects RSS Feed">Projects RSS</a>
   </div>
-  <div style="margin-bottom:0.5em;">
-    <a href="mailto:workwithrisaav@gmail.com" title="Email">Email</a> |
-    <a href="https://risaav.medium.com/" title="Medium">Medium</a> |
-    <a href="https://www.linkedin.com/in/risaavdahal/" title="LinkedIn">LinkedIn</a> |
-    <a href="https://github.com/rishav-dahal" title="GitHub">GitHub</a> |
-    <a href="https://rishav.dl.surf/" title="rishav.dl.surf">rishav.dl.surf</a>
-  </div>
-  <div style="margin-bottom:0.5em;">
+  <div>
     <span>&copy; {{ now.Year }} Rishav Dahal. All rights reserved.</span>
   </div>
 </footer>

@@ -1,59 +1,96 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rishav Dahal</title>
-    <link>//localhost:1313/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Rishav Dahal</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Feb 2026 10:00:00 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google AdSense Approval Checklist for 2026</title>
+      <link>http://localhost:1313/blogs/google-adsense-approval-checklist-2026/</link>
+      <pubDate>Mon, 23 Feb 2026 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/blogs/google-adsense-approval-checklist-2026/</guid>
+      <description>A practical AdSense approval checklist to avoid low-value content and policy rejection issues in 2026.</description>
+    </item>
+    <item>
+      <title>Terms and Conditions</title>
+      <link>http://localhost:1313/terms-and-conditions/</link>
+      <pubDate>Mon, 24 Feb 2025 12:24:00 +0545</pubDate>
+      <guid>http://localhost:1313/terms-and-conditions/</guid>
+      <description>&lt;p&gt;By accessing this website, you agree to these terms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;use-of-content&#34;&gt;Use of Content&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Content on this site is for informational and educational purposes.&lt;/li&gt;&#xA;&lt;li&gt;Unless otherwise stated, text and media are owned by the site owner.&lt;/li&gt;&#xA;&lt;li&gt;You may reference content with proper attribution and a link to the source page.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prohibited-use&#34;&gt;Prohibited Use&lt;/h2&gt;&#xA;&lt;p&gt;You agree not to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Use this website for unlawful purposes.&lt;/li&gt;&#xA;&lt;li&gt;Attempt unauthorized access to any part of the site or its infrastructure.&lt;/li&gt;&#xA;&lt;li&gt;Reproduce content in bulk without permission.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;external-links&#34;&gt;External Links&lt;/h2&gt;&#xA;&lt;p&gt;This website may include links to third-party resources. We are not responsible for the availability, accuracy, or practices of those external sites.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 24 Feb 2025 12:22:00 +0545</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;If you’d like to collaborate, discuss a project, or ask a question, feel free to reach out.&lt;/p&gt;&#xA;&lt;h2 id=&#34;email&#34;&gt;Email&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;mailto:workwithrisaav@gmail.com&#34;&gt;workwithrisaav@gmail.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;professional-links&#34;&gt;Professional Links&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/risaavdahal/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/rishav-dahal&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://risaav.medium.com/&#34;&gt;Medium&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;response-time&#34;&gt;Response Time&lt;/h2&gt;&#xA;&lt;p&gt;I usually reply within 24–72 hours.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://localhost:1313/privacy-policy/</link>
+      <pubDate>Mon, 24 Feb 2025 12:20:00 +0545</pubDate>
+      <guid>http://localhost:1313/privacy-policy/</guid>
+      <description>&lt;p&gt;This Privacy Policy explains how information is handled on this website.&lt;/p&gt;&#xA;&lt;h2 id=&#34;who-we-are&#34;&gt;Who We Are&lt;/h2&gt;&#xA;&lt;p&gt;This website is operated by &lt;strong&gt;Rishav Dahal&lt;/strong&gt; and publishes blogs, project updates, and portfolio content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;information-we-collect&#34;&gt;Information We Collect&lt;/h2&gt;&#xA;&lt;p&gt;This site may collect limited data through:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Basic analytics tools (such as page views, device/browser type, and referral source).&lt;/li&gt;&#xA;&lt;li&gt;Cookies used for site functionality and performance measurement.&lt;/li&gt;&#xA;&lt;li&gt;Direct communication when you contact us by email.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We do not sell personal data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LAN-Based Shared Todo Manager</title>
+      <link>http://localhost:1313/projects/lan-todo-manager/</link>
+      <pubDate>Fri, 10 Jan 2025 11:30:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/lan-todo-manager/</guid>
+      <description>Real-time collaborative task manager using TCP socket programming in C++</description>
+    </item>
+    <item>
+      <title>Modular Query Refinement</title>
+      <link>http://localhost:1313/projects/modular-query-refinement/</link>
+      <pubDate>Fri, 10 Jan 2025 11:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/modular-query-refinement/</guid>
+      <description>NLP-powered search enhancement system for improving query accuracy and relevance</description>
+    </item>
+    <item>
+      <title>CGPA Calculator</title>
+      <link>http://localhost:1313/projects/cgpa-calculator/</link>
+      <pubDate>Fri, 10 Jan 2025 10:30:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/cgpa-calculator/</guid>
+      <description>Academic grade management tool for calculating SGPA and CGPA across semesters</description>
+    </item>
+    <item>
+      <title>Face Recognition Attendance System</title>
+      <link>http://localhost:1313/projects/face-recognition-attendance-system/</link>
+      <pubDate>Fri, 10 Jan 2025 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/face-recognition-attendance-system/</guid>
+      <description>Real-time attendance tracking using face recognition with KNN classification</description>
+    </item>
+    <item>
+      <title>Building a Recipe Generator with Generative AI</title>
+      <link>http://localhost:1313/blogs/building-a-recipe-generator-with-generative-ai/</link>
+      <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
+      <guid>http://localhost:1313/blogs/building-a-recipe-generator-with-generative-ai/</guid>
+      <description>How I built an AI-powered tool to generate recipes from fridge photos using Gemini, RAG, and structured outputs.</description>
+    </item>
     <item>
       <title>Improving OCR Accuracy on Document Images</title>
-      <link>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</link>
+      <link>http://localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
-      <guid>//localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</guid>
-      <description>&lt;h1 id=&#34;improving-ocr-accuracy-on-document-images-a-step-by-step-approach&#34;&gt;Improving OCR Accuracy on Document Images: A Step-by-Step Approach&lt;/h1&gt;
-&lt;p&gt;Optical Character Recognition (OCR) is revolutionizing the way we digitize and process documents. Whether it’s converting a scanned document into editable text or extracting data from receipts, OCR technology is increasingly relied upon across industries. However, one of the main challenges faced by OCR systems is their accuracy, especially when dealing with noisy or poorly scanned images. In this blog, I’ll walk you through the techniques I used to improve OCR accuracy on document images by leveraging pre-processing methods.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blogs/improving-ocr-accuracy-on-document-images/</guid>
+      <description>&lt;h1 id=&#34;improving-ocr-accuracy-on-document-images-a-step-by-step-approach&#34;&gt;Improving OCR Accuracy on Document Images: A Step-by-Step Approach&lt;/h1&gt;&#xA;&lt;p&gt;Optical Character Recognition (OCR) is revolutionizing the way we digitize and process documents. Whether it’s converting a scanned document into editable text or extracting data from receipts, OCR technology is increasingly relied upon across industries. However, one of the main challenges faced by OCR systems is their accuracy, especially when dealing with noisy or poorly scanned images. In this blog, I’ll walk you through the techniques I used to improve OCR accuracy on document images by leveraging pre-processing methods.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OCR Code Compiler</title>
-      <link>//localhost:1313/projects/ocr/</link>
+      <link>http://localhost:1313/projects/ocr/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
-      <guid>//localhost:1313/projects/ocr/</guid>
-      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;
-&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;
-&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;
-&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;
-&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;
-&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/ocr/</guid>
+      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;&#xA;&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;&#xA;&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;&#xA;&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;&#xA;&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;&#xA;&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>//localhost:1313/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;hello-im-rishav-dahal-&#34;&gt;Hello, I&amp;rsquo;m Rishav Dahal! 👋&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;m a passionate &lt;strong&gt;Software Engineering student&lt;/strong&gt; at Nepal College of Information Technology (NCIT) with a strong interest in &lt;strong&gt;web development, AI, and creative problem-solving&lt;/strong&gt;. Currently based in Bhaktapur, Nepal, I thrive on building innovative projects that bridge technology and real-world needs.&lt;/p&gt;
-&lt;h3 id=&#34;-what-i-do&#34;&gt;🔧 What I Do&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Full-Stack Development&lt;/strong&gt;: Crafting interactive websites and software applications using Python, Django, and modern frameworks.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI &amp;amp; Machine Learning&lt;/strong&gt;: Developing solutions like medical chatbots, attendance systems, and OCR tools with NLP and computer vision.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Creative Design&lt;/strong&gt;: Designing graphics (Figma) and editing videos to bring ideas to life.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-projects--achievements&#34;&gt;🚀 Projects &amp;amp; Achievements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Built &lt;strong&gt;Shiskhya&lt;/strong&gt; (lecture summarization software) and &lt;strong&gt;Swashya&lt;/strong&gt; (centralized medical records app) during hackathons.&lt;/li&gt;
-&lt;li&gt;Created a &lt;strong&gt;BERT-based medical chatbot&lt;/strong&gt; and an &lt;strong&gt;AI attendance system&lt;/strong&gt; using OpenCV and deep learning.&lt;/li&gt;
-&lt;li&gt;Volunteered as an IT Cordinator and Graphic Designer for &lt;strong&gt;HULT Prize at NCIT 2022&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-technical-skills&#34;&gt;🛠️ Technical Skills&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;
-&lt;code&gt;Python&lt;/code&gt; &lt;code&gt;Java&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;C++&lt;/code&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;hello-im-rishav-dahal-&#34;&gt;Hello, I&amp;rsquo;m Rishav Dahal! 👋&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a passionate &lt;strong&gt;Software Engineering student&lt;/strong&gt; at Nepal College of Information Technology (NCIT) with a strong interest in &lt;strong&gt;web development, AI, and creative problem-solving&lt;/strong&gt;. Currently based in Bhaktapur, Nepal, I thrive on building innovative projects that bridge technology and real-world needs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-what-i-do&#34;&gt;🔧 What I Do&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Full-Stack Development&lt;/strong&gt;: Crafting interactive websites and software applications using Python, Django, and modern frameworks.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI &amp;amp; Machine Learning&lt;/strong&gt;: Developing solutions like medical chatbots, attendance systems, and OCR tools with NLP and computer vision.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Creative Design&lt;/strong&gt;: Designing graphics (Figma) and editing videos to bring ideas to life.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-projects--achievements&#34;&gt;🚀 Projects &amp;amp; Achievements&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built &lt;strong&gt;Shiskhya&lt;/strong&gt; (lecture summarization software) and &lt;strong&gt;Swashya&lt;/strong&gt; (centralized medical records app) during hackathons.&lt;/li&gt;&#xA;&lt;li&gt;Created a &lt;strong&gt;BERT-based medical chatbot&lt;/strong&gt; and an &lt;strong&gt;AI attendance system&lt;/strong&gt; using OpenCV and deep learning.&lt;/li&gt;&#xA;&lt;li&gt;Volunteered as an IT Cordinator and Graphic Designer for &lt;strong&gt;HULT Prize at NCIT 2022&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-technical-skills&#34;&gt;🛠️ Technical Skills&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;code&gt;Python&lt;/code&gt; &lt;code&gt;Java&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;C++&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

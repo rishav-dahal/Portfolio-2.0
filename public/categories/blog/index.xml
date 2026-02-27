@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Rishav Dahal</title>
+    <link>http://localhost:1313/categories/blog/</link>
+    <description>Recent content in Blog on Rishav Dahal</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Feb 2026 10:00:00 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google AdSense Approval Checklist for 2026</title>
+      <link>http://localhost:1313/blogs/google-adsense-approval-checklist-2026/</link>
+      <pubDate>Mon, 23 Feb 2026 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/blogs/google-adsense-approval-checklist-2026/</guid>
+      <description>A practical AdSense approval checklist to avoid low-value content and policy rejection issues in 2026.</description>
+    </item>
+  </channel>
+</rss>

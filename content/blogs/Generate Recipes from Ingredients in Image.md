@@ -2,16 +2,19 @@
 title: "Building a Recipe Generator with Generative AI"
 date: 2025-01-09T11:32:00+05:45
 slug: building-a-recipe-generator-with-generative-AI
-category: blog 
-summary:
-description: 
+category: blog
+summary: "How I built an AI-powered tool to generate recipes from fridge photos using Gemini, RAG, and structured outputs."
+description: "Discover how generative AI can turn random fridge ingredients into creative recipes. Learn about image analysis, structured outputs, and retrieval-augmented generation."
 cover:
-  image:
-  alt:
-  caption: 
-  relative: true
+image: https://cdn.rishavdahal.com.np/receipe.jpeg
+alt: "AI-generated recipe illustration"
+caption: "Recipe generator powered by generative AI"
+relative: true
 showtoc: true
 draft: false
+tags: ["AI", "recipes", "machine learning", "Gemini", "RAG"]
+author: "Rishav Dahal"
+keywords: ["recipe generator", "AI", "fridge ingredients", "Gemini", "RAG", "structured outputs"]
 ---
 
 

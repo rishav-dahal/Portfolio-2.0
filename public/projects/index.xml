@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Rishav Dahal</title>
-    <link>//localhost:1313/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Rishav Dahal</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2025 11:32:00 +0545</lastBuildDate>
-    <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2025 11:30:00 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LAN-Based Shared Todo Manager</title>
+      <link>http://localhost:1313/projects/lan-todo-manager/</link>
+      <pubDate>Fri, 10 Jan 2025 11:30:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/lan-todo-manager/</guid>
+      <description>Real-time collaborative task manager using TCP socket programming in C++</description>
+    </item>
+    <item>
+      <title>Modular Query Refinement</title>
+      <link>http://localhost:1313/projects/modular-query-refinement/</link>
+      <pubDate>Fri, 10 Jan 2025 11:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/modular-query-refinement/</guid>
+      <description>NLP-powered search enhancement system for improving query accuracy and relevance</description>
+    </item>
+    <item>
+      <title>CGPA Calculator</title>
+      <link>http://localhost:1313/projects/cgpa-calculator/</link>
+      <pubDate>Fri, 10 Jan 2025 10:30:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/cgpa-calculator/</guid>
+      <description>Academic grade management tool for calculating SGPA and CGPA across semesters</description>
+    </item>
+    <item>
+      <title>Face Recognition Attendance System</title>
+      <link>http://localhost:1313/projects/face-recognition-attendance-system/</link>
+      <pubDate>Fri, 10 Jan 2025 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/projects/face-recognition-attendance-system/</guid>
+      <description>Real-time attendance tracking using face recognition with KNN classification</description>
+    </item>
     <item>
       <title>OCR Code Compiler</title>
-      <link>//localhost:1313/projects/ocr/</link>
+      <link>http://localhost:1313/projects/ocr/</link>
       <pubDate>Thu, 09 Jan 2025 11:32:00 +0545</pubDate>
-      <guid>//localhost:1313/projects/ocr/</guid>
-      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;
-&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;
-&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;
-&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;
-&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;
-&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/ocr/</guid>
+      <description>&lt;h3 id=&#34;unveiling-ocrcompiler-20---bridging-ocr-and-code-compilation&#34;&gt;Unveiling OCRcompiler 2.0 - Bridging OCR and Code Compilation&lt;/h3&gt;&#xA;&lt;p&gt;In the world of software development, innovation often lies at the intersection of disparate technologies. &lt;strong&gt;OCRcompiler 2.0&lt;/strong&gt;, hosted on &lt;a href=&#34;https://github.com/rishav-dahal/OCRcompiler2.0&#34;&gt;GitHub&lt;/a&gt;, is a prime example of this. Combining Optical Character Recognition (OCR) with multi-language code compilation, this project takes document digitization and code execution to a whole new level.&lt;/p&gt;&#xA;&lt;h4 id=&#34;overview-of-ocrcompiler-20&#34;&gt;Overview of OCRcompiler 2.0&lt;/h4&gt;&#xA;&lt;p&gt;OCRcompiler 2.0 is designed to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Extract text from scanned or image-based documents using OCR.&lt;/li&gt;&#xA;&lt;li&gt;Parse and compile code written in multiple programming languages such as Python, C, C++, Java, and JavaScript.&lt;/li&gt;&#xA;&lt;li&gt;Provide a seamless interface for users to upload images, process code, and view execution results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This project not only automates tedious tasks like manual text extraction but also allows developers to execute and validate code directly from scanned documents.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,1 +1,53 @@
 <meta name="google-adsense-account" content="ca-pub-7059103808413259">
+<!-- Favicon and Apple Touch Icon -->
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+<!-- Canonical Link -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Sitemap Link -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+<!-- Language and Locale Meta Tags -->
+<meta name="language" content="en">
+<meta http-equiv="Content-Language" content="en">
+
+<!-- SEO Meta Tags -->
+<title>{{ .Title }}</title>
+<meta name="description" content="{{ .Description }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ .Params.featured_image | default "/images/default-og-image.jpg" }}">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:image" content="{{ .Params.featured_image | default "/images/default-og-image.jpg" }}">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": "Rishav Dahal Portfolio",
+	"url": "https://www.rishavdahal.com.np/",
+	"description": "Personal portfolio, blogs, and projects by Rishav Dahal."
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLDKJ0K8EV"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GLDKJ0K8EV');
+</script>

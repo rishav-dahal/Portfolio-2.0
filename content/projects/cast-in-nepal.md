@@ -24,6 +24,8 @@ draft: false
 
 A fast, searchable open-access digital archive documenting **700+ verified Nepali surnames, gotras, ancestral lineages, and kuldevtas**. Designed to preserve cultural heritage and demographic clarity through clean, accessible web software and automated data pipelines.
 
+> 🚀 **Live Interactive Web App:** [Launch Cast in Nepal Archive (/cast-in-nepal/) ↗](/cast-in-nepal/)
+
 ---
 
 ## 🌟 Overview
@@ -70,5 +72,5 @@ Nepal's social and cultural landscape comprises a rich tapestry of ethnic groups
 
 ## 🌐 Explore the Project
 
-- 🔗 **Live Website:** [Explore Cast in Nepal Archive](#) *(Configure your live URL or subdomain)*
+- 🔗 **Live Website:** [Launch Cast in Nepal Web App ↗](/cast-in-nepal/)
 - 🐙 **Source Code:** [GitHub Repository](https://github.com/rishav-dahal)

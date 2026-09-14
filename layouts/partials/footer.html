@@ -1,14 +1,17 @@
 {{- if not (.Param "hideFooter") }}
-<footer class="footer"
-  style="text-align:center; margin:2em 0; font-size:0.95em; color:var(--secondary); display:flex; flex-direction:column; gap:0.5em; align-items:center;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.5em; margin-bottom:0.2em;">
-    <a href="/privacy-policy/">Privacy Policy</a> |
-    <a href="/terms-and-conditions/">Terms &amp; Conditions</a> |
-    <a href="/contact/">Contact</a> |
-    <a href="/blogs/index.xml" title="Blogs RSS Feed">Blogs RSS</a> |
+<footer class="footer custom-footer">
+  <div class="footer-links">
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <span class="footer-divider">&bull;</span>
+    <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+    <span class="footer-divider">&bull;</span>
+    <a href="/contact/">Contact</a>
+    <span class="footer-divider">&bull;</span>
+    <a href="/blogs/index.xml" title="Blogs RSS Feed">Blogs RSS</a>
+    <span class="footer-divider">&bull;</span>
     <a href="/projects/index.xml" title="Projects RSS Feed">Projects RSS</a>
   </div>
-  <div>
+  <div class="footer-copyright">
     <span>&copy; {{ now.Year }} Rishav Dahal. All rights reserved.</span>
   </div>
 </footer>
@@ -25,7 +28,7 @@
 {{- partial "extend_footer.html" . }}
 
 <script>
-  let menu = document.getElementById('menu')
+  const menu = document.getElementById('menu');
   if (menu) {
     menu.scrollLeft = localStorage.getItem("menu-scroll-position");
     menu.onscroll = function () {
@@ -36,13 +39,14 @@
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      var id = this.getAttribute("href").substr(1);
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-          behavior: "smooth"
-        });
-      } else {
-        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+      const id = this.getAttribute("href").substr(1);
+      const target = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+      if (target) {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          target.scrollIntoView({ behavior: "smooth" });
+        } else {
+          target.scrollIntoView();
+        }
       }
       if (id === "top") {
         history.replaceState(null, null, " ");
@@ -51,37 +55,39 @@
       }
     });
   });
-
 </script>
 
 {{- if (not site.Params.disableScrollToTop) }}
 <script>
-  var mybutton = document.getElementById("top-link");
-  window.onscroll = function () {
-    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-      mybutton.style.visibility = "visible";
-      mybutton.style.opacity = "1";
-    } else {
-      mybutton.style.visibility = "hidden";
-      mybutton.style.opacity = "0";
-    }
-  };
-
+  const mybutton = document.getElementById("top-link");
+  if (mybutton) {
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        mybutton.style.visibility = "visible";
+        mybutton.style.opacity = "1";
+      } else {
+        mybutton.style.visibility = "hidden";
+        mybutton.style.opacity = "0";
+      }
+    });
+  }
 </script>
 {{- end }}
 
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    if (document.body.className.includes("dark")) {
-      document.body.classList.remove('dark');
-      localStorage.setItem("pref-theme", 'light');
-    } else {
-      document.body.classList.add('dark');
-      localStorage.setItem("pref-theme", 'dark');
-    }
-  })
-
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+      } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+      }
+    });
+  }
 </script>
 {{- end }}
 
@@ -89,6 +95,7 @@
 <script>
   document.querySelectorAll('pre > code').forEach((codeblock) => {
     const container = codeblock.parentNode.parentNode;
+    if (!container) return;
 
     const copybutton = document.createElement('button');
     copybutton.classList.add('copy-code');
@@ -101,7 +108,7 @@
       }, 2000);
     }
 
-    copybutton.addEventListener('click', (cb) => {
+    copybutton.addEventListener('click', () => {
       if ('clipboard' in navigator) {
         navigator.clipboard.writeText(codeblock.textContent);
         copyingDone();
@@ -116,19 +123,15 @@
       try {
         document.execCommand('copy');
         copyingDone();
-      } catch (e) { };
+      } catch (e) { }
       selection.removeRange(range);
     });
 
     if (container.classList.contains("highlight")) {
       container.appendChild(copybutton);
-    } else if (container.parentNode.firstChild == container) {
-      // td containing LineNos
-    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-      // table containing LineNos and code
-      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else if (codeblock.parentNode.parentNode.nodeName === "TABLE") {
+      codeblock.parentNode.parentNode.appendChild(copybutton);
     } else {
-      // code blocks not having highlight as parent class
       codeblock.parentNode.appendChild(copybutton);
     }
   });

@@ -1,16 +1,32 @@
-languageCode: en-us
 baseURL: "https://rishavdahal.com.np/"
-title: Rishav Dahal
+title: "Rishav Dahal"
+theme: PaperMod
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    locale: en-US
+    label: English
+    weight: 1
+
 pagination:
   pagerSize: 5
-theme: PaperMod
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-#googleAnalytics: UA-123-45
+services:
+  googleAnalytics:
+    id: "G-GLDKJ0K8EV"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 minify:
   disableXML: true
@@ -36,19 +52,18 @@ params:
     favicon16x16: "favicon-16x16.png"
     favicon32x32: "favicon-32x32.png"
     apple_touch_icon: "apple-touch-icon.png"
-    theme_color: "#0057b8" # Custom blue
+    theme_color: "#0057b8"
     msapplication_TileColor: "#0057b8"
-    disableFingerprinting: true
+    disableFingerprinting: false
 
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Rishav Dahal
+  env: production
+  title: "Rishav Dahal"
   description: "Portfolio, blogs, and projects by Rishav Dahal on backend engineering, AI, and practical software development."
-  keywords: [Blog, Portfolio, Backend Development, AI, Machine Learning, Software Engineering]
-  author: Rishav Dahal
-  # author: ["Me", "You"] # multiple authors
-  #images: ["<link or path of image for opengraph, twitter-cards>"]
+  keywords: [Blog, Portfolio, Backend Development, AI, Machine Learning, Software Engineering, Python, Django]
+  author: "Rishav Dahal"
+  images: ["images/default-og-image.jpg"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: auto
   disableThemeToggle: false
 
   ShowReadingTime: true
@@ -56,7 +71,7 @@ params:
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowWordCount: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: true
@@ -72,7 +87,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: true
     title: "Hi, I'm Rishav Dahal 👋"
     subtitle: "Welcome to my digital lab! I build practical AI, backend systems, and share hands-on projects, blogs, and experiments in software engineering and machine learning."
     imageUrl: "images/profile.jpg"
@@ -84,6 +99,8 @@ params:
         url: blogs
       - name: Projects
         url: projects
+      - name: Search
+        url: search
       - name: Contact
         url: contact
 
@@ -95,31 +112,26 @@ params:
   socialIcons:
     - name: email
       url: "mailto:workwithrisaav@gmail.com"
-    - name: medium
-      url: "https://risaav.medium.com/"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/risaavdahal/"
     - name: github
       url: "https://github.com/rishav-dahal"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/risaavdahal/"
+    - name: medium
+      url: "https://risaav.medium.com/"
     - name: dlsurf
       url: "https://rishav.dl.surf/"
 
-  analytics:
-    # google:
-    #   SiteVerificationTag: ""
-
   cover:
-    hidden: false # hide everywhere but not in structured data
-    hiddenInList: false # hide on list pages and home
-    hiddenInSingle: false # hide on single page
-
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
 
   editPost:
     URL: ""
-    Text: "" # edit text
-    appendFilePath: true # to append file path to Edit link
+    Text: ""
+    appendFilePath: true
 
-  # for search
+  # for client-side search
   # https://fusejs.io/api/options.html
   fuseOpts:
     isCaseSensitive: false
@@ -129,6 +141,7 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+
 menu:
   main:
     - identifier: blog
@@ -139,9 +152,15 @@ menu:
       name: Projects
       url: projects/
       weight: 2
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 3
     - identifier: about
       name: About
       url: about/
-      weight: 3
-
-  
+      weight: 4
+    - identifier: contact
+      name: Contact
+      url: contact/
+      weight: 5

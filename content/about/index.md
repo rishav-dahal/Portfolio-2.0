@@ -1,5 +1,7 @@
 ---
 title: "About"
+description: "Learn more about Rishav Dahal, a Software Engineer and AI researcher based in Nepal."
+date: 2025-01-10T10:00:00+05:45
 ---
 ## Hello, I'm Rishav Dahal! 👋
 
@@ -13,7 +15,7 @@ I'm a passionate **Software Engineering student** at Nepal College of Informatio
 ### 🚀 Projects & Achievements  
 - Built **Shiskhya** (lecture summarization software) and **Swashya** (centralized medical records app) during hackathons.  
 - Created a **BERT-based medical chatbot** and an **AI attendance system** using OpenCV and deep learning.  
-- Volunteered as an IT Cordinator and Graphic Designer for **HULT Prize at NCIT 2022**.  
+- Volunteered as an IT Coordinator and Graphic Designer for **HULT Prize at NCIT 2022**.  
 
 ### 🛠️ Technical Skills
 

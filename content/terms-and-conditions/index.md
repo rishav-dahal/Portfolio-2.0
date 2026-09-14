@@ -1,7 +1,12 @@
 ---
 title: "Terms and Conditions"
+description: "Terms and conditions for using Rishav Dahal's portfolio and website."
 date: 2025-02-24T12:24:00+05:45
 draft: false
+comments: false
+disableShare: true
+hideMeta: true
+ShowPostNavLinks: false
 ---
 
 By accessing this website, you agree to these terms.

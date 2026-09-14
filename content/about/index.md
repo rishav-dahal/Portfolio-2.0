@@ -2,6 +2,11 @@
 title: "About"
 description: "Learn more about Rishav Dahal, a Software Engineer and AI researcher based in Nepal."
 date: 2025-01-10T10:00:00+05:45
+draft: false
+comments: false
+disableShare: true
+hideMeta: true
+ShowPostNavLinks: false
 ---
 ## Hello, I'm Rishav Dahal! 👋
 

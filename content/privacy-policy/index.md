@@ -1,7 +1,12 @@
 ---
 title: "Privacy Policy"
+description: "Privacy policy for Rishav Dahal's website and services."
 date: 2025-02-24T12:20:00+05:45
 draft: false
+comments: false
+disableShare: true
+hideMeta: true
+ShowPostNavLinks: false
 ---
 
 This Privacy Policy explains how information is handled on this website.

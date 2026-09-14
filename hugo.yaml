@@ -32,6 +32,11 @@ minify:
   disableXML: true
   minifyOutput: true
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   giscus:
     repo: rishav-dahal/Portfolio-2.0
@@ -88,7 +93,7 @@ params:
   # profile-mode
   profileMode:
     enabled: true
-    title: "Hi, I'm Rishav Dahal 👋"
+    title: "Hi, I'm Rishav Dahal <span class=\"wave-emoji\">👋</span>"
     subtitle: "Welcome to my digital lab! I build practical AI, backend systems, and share hands-on projects, blogs, and experiments in software engineering and machine learning."
     imageUrl: "images/profile.jpg"
     imageWidth: 120

@@ -12,8 +12,8 @@
   --radius-full: 9999px;
 
   /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
 
   /* Accent & Highlight Colors */
@@ -29,7 +29,8 @@
 }
 
 /* Light Theme Variables */
-:root:not(.dark) {
+:root,
+[data-theme="light"] {
   --theme: #fbfbfd;
   --entry: #ffffff;
   --primary: #111827;
@@ -43,9 +44,12 @@
   --tag-hover: #e5e7eb;
   --inline-code-bg: #f1f5f9;
   --code-border: #e2e8f0;
+  color-scheme: light;
 }
 
 /* Dark Theme Variables */
+:root[data-theme="dark"],
+[data-theme="dark"],
 .dark {
   --theme: #0f1117;
   --entry: #161922;
@@ -60,6 +64,7 @@
   --tag-hover: #262d40;
   --inline-code-bg: #1e2333;
   --code-border: #283046;
+  color-scheme: dark;
 }
 
 /* --- Base Typography --- */
@@ -83,12 +88,22 @@ code, kbd, samp, pre {
   font-family: var(--font-mono);
 }
 
-/* --- Top Navigation Header --- */
-.nav {
+/* --- Top Navigation Header & Theme Toggle --- */
+.header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.header-nav {
+  align-items: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .logo a {
@@ -96,6 +111,75 @@ code, kbd, samp, pre {
   font-weight: 800;
   letter-spacing: -0.03em;
   font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-switches {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: auto !important;
+}
+
+.logo-switches > * {
+  min-height: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+#theme-toggle,
+.theme-toggle {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0.4rem !important;
+  margin: 0 !important;
+  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: auto !important;
+  height: 36px !important;
+  width: 36px !important;
+  border-radius: 8px !important;
+  color: var(--primary) !important;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast) !important;
+}
+
+#theme-toggle:hover,
+.theme-toggle:hover {
+  background-color: var(--brand-blue-light) !important;
+  color: var(--brand-blue) !important;
+  transform: scale(1.08);
+}
+
+#theme-toggle svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: currentColor;
+}
+
+/* Sun/Moon icons in Dark/Light themes */
+[data-theme="dark"] #theme-toggle .moon,
+.dark #theme-toggle .moon {
+  display: none !important;
+}
+
+[data-theme="dark"] #theme-toggle .sun,
+.dark #theme-toggle .sun {
+  display: block !important;
+}
+
+:root:not([data-theme="dark"]):not(.dark) #theme-toggle .sun,
+[data-theme="light"] #theme-toggle .sun {
+  display: none !important;
+}
+
+:root:not([data-theme="dark"]):not(.dark) #theme-toggle .moon,
+[data-theme="light"] #theme-toggle .moon {
+  display: block !important;
 }
 
 #menu a {
@@ -143,9 +227,31 @@ code, kbd, samp, pre {
   font-weight: 800;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary) 60%, var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.wave-emoji {
+  display: inline-block;
+  font-style: normal;
+  -webkit-text-fill-color: initial !important;
+  transform-origin: 70% 70%;
+  animation: wave-motion 2.4s infinite;
+}
+
+@keyframes wave-motion {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .profile_inner .subtitle {
@@ -153,18 +259,18 @@ code, kbd, samp, pre {
   max-width: 640px;
   line-height: 1.65;
   color: var(--secondary);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Profile Mode Action Buttons */
-.button-inner {
+.buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
 }
 
-.button-inner .button {
+.button {
   font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 600;
@@ -172,29 +278,31 @@ code, kbd, samp, pre {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--entry);
-  color: var(--primary);
+  color: var(--primary) !important;
   box-shadow: var(--card-shadow);
   transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
 }
 
-.button-inner .button:hover {
+.button:hover {
   transform: translateY(-2px);
   border-color: var(--brand-blue);
-  color: var(--brand-blue);
+  color: var(--brand-blue) !important;
   box-shadow: var(--card-hover-shadow);
 }
 
 /* First button gets primary accent */
-.button-inner .button:first-child {
+.buttons .button:first-child {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
-.button-inner .button:first-child:hover {
+.buttons .button:first-child:hover {
   background: var(--brand-blue-hover);
   border-color: var(--brand-blue-hover);
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: 0 8px 24px var(--brand-glow);
 }
 
@@ -202,6 +310,9 @@ code, kbd, samp, pre {
 .social-icons {
   margin-top: 1.5rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.85rem;
 }
 
@@ -209,19 +320,14 @@ code, kbd, samp, pre {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--entry);
   color: var(--secondary);
+  box-shadow: var(--card-shadow);
   transition: all var(--transition-fast);
-}
-
-.social-icons a svg {
-  width: 19px;
-  height: 19px;
-  fill: currentColor;
 }
 
 .social-icons a:hover {
@@ -229,6 +335,12 @@ code, kbd, samp, pre {
   color: var(--brand-blue);
   border-color: var(--brand-blue);
   box-shadow: 0 6px 16px var(--brand-glow);
+}
+
+/* Do not force fill: currentColor because email and dlsurf are stroke-based SVGs */
+.social-icons a svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* --- Post & Project Cards --- */
@@ -487,9 +599,9 @@ code, kbd, samp, pre {
 }
 
 /* --- Footer --- */
-.custom-footer {
+.footer {
   margin-top: 4rem;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 1rem 3rem;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -498,6 +610,7 @@ code, kbd, samp, pre {
   text-align: center;
   color: var(--secondary);
   font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .footer-links {
@@ -511,21 +624,44 @@ code, kbd, samp, pre {
 .footer-links a {
   color: var(--secondary);
   font-weight: 500;
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
   color: var(--brand-blue);
+  text-decoration: underline;
 }
 
 .footer-divider {
   color: var(--tertiary);
   font-size: 0.75rem;
+  user-select: none;
 }
 
 .footer-copyright {
   font-size: 0.86rem;
   color: var(--tertiary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-copyright a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-copyright a:hover {
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+.post-footer:empty {
+  display: none !important;
 }
 
 /* --- Top-link Button --- */

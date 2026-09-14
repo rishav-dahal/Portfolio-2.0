@@ -29,14 +29,13 @@ draft: false
 1. [Background & Motivation](#1-background--motivation)
 2. [Understanding the eSewa Intent Payment Flow](#2-understanding-the-esewa-intent-payment-flow)
 3. [Project Structure & Environment Setup](#3-project-structure--environment-setup)
-4. [Step 1 â€” Booking a Payment Intent](#4-step-1--booking-a-payment-intent)
-5. [Step 2 â€” HMAC-SHA256 Signatures](#5-step-2--hmac-sha256-signatures)
-6. [Step 3 â€” Handling the Callback](#6-step-3--handling-the-callback)
-7. [Step 4 â€” Server-Side Status Verification](#7-step-4--server-side-status-verification)
-8. [Step 5 â€” Django Routing](#8-step-5--django-routing)
+4. [Step 1 — Booking a Payment Intent](#4-step-1--booking-a-payment-intent)
+5. [Step 2 — HMAC-SHA256 Signatures](#5-step-2--hmac-sha256-signatures)
+6. [Step 3 — Handling the Callback](#6-step-3--handling-the-callback)
+7. [Step 4 — Server-Side Status Verification](#7-step-4--server-side-status-verification)
+8. [Step 5 — Django Routing](#8-step-5--django-routing)
 9. [The Bug: Silent Callback Failures in Production](#9-the-bug-silent-callback-failures-in-production)
 10. [Integration Checklist](#10-integration-checklist)
-11. [Full Production Code](#11-full-production-code)
 
 ---
 
@@ -53,35 +52,35 @@ eSewa offers two integration modes:
 
 The Intent API v2 eliminates the browser redirect chain entirely. Instead, your backend books a payment intent, gets a `deeplink`, and the mobile client opens the eSewa app directly. The result is a seamless native-to-native handoff that feels far more polished.
 
-This post documents a full production integration of the Intent API v2 â€” including **a production-only failure** that took us hours to root-cause.
+This post documents a full production integration of the Intent API v2 — including **a production-only failure** that took us hours to root-cause.
 
 ---
 
 ## 2. Understanding the eSewa Intent Payment Flow
 
-```
+```text
 Mobile Client         Your Backend              eSewa Gateway
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€              â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-     â”‚                     â”‚                         â”‚
-     â”‚â”€â”€ POST /initiate â”€â”€>â”‚                         â”‚
-     â”‚                     â”‚â”€â”€ POST /intent/book â”€â”€â”€>â”‚
-     â”‚                     â”‚<â”€â”€ { booking_id,        â”‚
-     â”‚                     â”‚     deeplink,           â”‚
-     â”‚                     â”‚     correlation_id } â”€â”€â”€â”‚
-     â”‚<â”€â”€ { deeplink } â”€â”€â”€â”€â”‚                         â”‚
-     â”‚                     â”‚                         â”‚
-     â”‚â”€â”€â”€ open deeplink â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€>  â”‚
-     â”‚             (user confirms payment in eSewa)  â”‚
-     â”‚                     â”‚                         â”‚
-     â”‚                     â”‚<â”€â”€ POST callback_url â”€â”€â”€â”‚  â† server push
-     â”‚                     â”‚    { signature, ... }   â”‚
-     â”‚                     â”‚                         â”‚
-     â”‚                     â”‚â”€â”€ POST /intent/status â”€>â”‚  â† server verify
-     â”‚                     â”‚<â”€â”€ { status: SUCCESS } â”€â”‚
-     â”‚                     â”‚                         â”‚
-     â”‚<â”€â”€ 200 OK â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”‚                         â”‚
-     â”‚  (app polls status  â”‚                         â”‚
-     â”‚   via redirect_url) â”‚                         â”‚
+──────────────        ────────────              ─────────────
+     │                     │                         │
+     │── POST /initiate ──>│                         │
+     │                     │── POST /intent/book ───>│
+     │                     │<── { booking_id,        │
+     │                     │     deeplink,           │
+     │                     │     correlation_id } ───│
+     │<── { deeplink } ────│                         │
+     │                     │                         │
+     │─── open deeplink ──────────────────────────>  │
+     │             (user confirms payment in eSewa)  │
+     │                     │                         │
+     │                     │<── POST callback_url ───│  ← server push
+     │                     │    { signature, ... }   │
+     │                     │                         │
+     │                     │── POST /intent/status ─>│  ← server verify
+     │                     │<── { status: SUCCESS } ─│
+     │                     │                         │
+     │<── 200 OK ──────────│                         │
+     │  (app polls status  │                         │
+     │   via redirect_url) │                         │
 ```
 
 ### Three IDs, one transaction
@@ -100,16 +99,16 @@ We persist these as a composite string `{transaction_uuid}:{booking_id}:{correla
 
 ## 3. Project Structure & Environment Setup
 
-We isolate everything eSewa-related into a self-contained package. Drop it anywhere in your Django project and register the URLs â€” nothing else needs to change.
+We isolate everything eSewa-related into a self-contained package. Drop it anywhere in your Django project and register the URLs — nothing else needs to change.
 
 ```
-esewa/                    # standalone package â€” drop anywhere in your project
-â”œâ”€â”€ __init__.py
-â”œâ”€â”€ constants.py          # Enums, response codes, signed-field-name constants
-â”œâ”€â”€ exceptions.py         # Typed domain exceptions
-â”œâ”€â”€ service.py            # All eSewa API logic (signing, booking, status check)
-â”œâ”€â”€ views.py              # DRF views â€” thin HTTP controllers only
-â””â”€â”€ urls.py               # URL patterns to include() in your root router
+esewa/                    # standalone package — drop anywhere in your project
+├── __init__.py
+├── constants.py          # Enums, response codes, signed-field-name constants
+├── exceptions.py         # Typed domain exceptions
+├── service.py            # All eSewa API logic (signing, booking, status check)
+├── views.py              # DRF views — thin HTTP controllers only
+└── urls.py               # URL patterns to include() in your root router
 ```
 
 Every import inside the package uses **relative paths** (`from . import ...`), so the package name is completely decoupled from your host project's module layout.
@@ -130,7 +129,7 @@ BACKEND_API_URL=https://api.yourdomain.com
 
 ---
 
-## 4. Step 1 â€” Booking a Payment Intent
+## 4. Step 1 — Booking a Payment Intent
 
 ### `constants.py`
 
@@ -150,7 +149,7 @@ class EsewaPaymentStatus(StrEnum):
     PENDING  = "PENDING"
 
 
-# Exact field order for signing â€” must match signed_field_names
+# Exact field order for signing — must match signed_field_names
 BOOKING_SIGNED_FIELDS = "product_code,amount,transaction_uuid"
 STATUS_SIGNED_FIELDS  = "booking_id,product_code,correlation_id"
 ```
@@ -171,7 +170,7 @@ class EsewaSignatureError(EsewaIntentError):
     """Raised when HMAC signature verification fails."""
 ```
 
-### `services/esewa_service.py` â€” config & crypto layer
+### `services/esewa_service.py` — config & crypto layer
 
 ```python
 from __future__ import annotations
@@ -208,7 +207,7 @@ logger = logging.getLogger("payment.esewa")
 _ESEWA_REQUEST_TIMEOUT = 20  # seconds
 
 
-# â”€â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─── Config ───────────────────────────────────────────────────────────────────
 
 def _get_env(key: str, default: str = "") -> str:
     value = os.getenv(key, default).strip()
@@ -271,7 +270,7 @@ class EsewaBookingResult:
             transaction_uuid=parts[0],
             booking_id=parts[1],
             correlation_id=parts[2],
-            deeplink="",  # not persisted â€” only needed at booking time
+            deeplink="",  # not persisted — only needed at booking time
         )
 
 
@@ -364,19 +363,19 @@ def book_payment_intent(
 Your mobile client receives `booking.deeplink` and opens it:
 
 ```swift
-// iOS â€” Swift
+// iOS — Swift
 guard let url = URL(string: deeplink) else { return }
 UIApplication.shared.open(url)
 ```
 
 ```kotlin
-// Android â€” Kotlin
+// Android — Kotlin
 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(deeplink)))
 ```
 
 ---
 
-## 5. Step 2 â€” HMAC-SHA256 Signatures
+## 5. Step 2 — HMAC-SHA256 Signatures
 
 Signatures authenticate both outbound requests (to eSewa) and inbound callbacks (from eSewa). The algorithm is identical in both directions: HMAC-SHA256 over a comma-separated `field=value` string, Base64-encoded.
 
@@ -386,12 +385,12 @@ def _build_signature(secret: str, fields: dict[str, str], field_order: str) -> s
     Construct the HMAC-SHA256 / Base64 signature required by eSewa.
 
     The message is built from `fields` in the exact order defined by `field_order`
-    (a comma-separated list of field names). Field order is not negotiable â€”
+    (a comma-separated list of field names). Field order is not negotiable —
     a mismatch will produce a different digest and eSewa will reject the request.
 
     Args:
         secret:      The raw ESEWA_INTENT_KEY string (Base64, not decoded).
-        fields:      Mapping of field name â†’ string value.
+        fields:      Mapping of field name → string value.
         field_order: Comma-separated field names defining message construction order.
 
     Returns:
@@ -439,7 +438,7 @@ def verify_callback_signature(payload: dict) -> bool:
     Key subtleties:
       - The `amount` field may arrive as "500.0" even if you sent 500 (integer).
         It must be normalised to "500" before building the message string.
-      - Use hmac.compare_digest() â€” never == â€” to prevent timing-oracle attacks.
+      - Use hmac.compare_digest() — never == — to prevent timing-oracle attacks.
       - Fields are processed in the exact order declared by `signed_field_names`.
 
     Returns:
@@ -512,13 +511,13 @@ def _normalise_amount(value: str | int | float) -> str:
 
 ---
 
-## 6. Step 3 â€” Handling the Callback
+## 6. Step 3 — Handling the Callback
 
 After the user confirms or cancels in the eSewa app, eSewa POSTs to your `callback_url`. Your endpoint must be:
 
 - Publicly reachable over HTTPS (not `localhost`, not an internal VPC address).
-- Unauthenticated â€” eSewa does not send any auth headers.
-- Fast â€” acknowledge with `200 OK` before doing heavy work.
+- Unauthenticated — eSewa does not send any auth headers.
+- Fast — acknowledge with `200 OK` before doing heavy work.
 
 ### `esewa/views.py`
 
@@ -543,7 +542,7 @@ logger = logging.getLogger("esewa.views")
 @api_view(["POST"])
 @authentication_classes([])     # eSewa does not send auth credentials
 @permission_classes([AllowAny]) # public webhook receiver
-@csrf_exempt                    # webhook â€” no browser session involved
+@csrf_exempt                    # webhook — no browser session involved
 def esewa_intent_callback_view(request: Request) -> Response:
     """
     Webhook receiver for eSewa Intent payment outcomes.
@@ -553,7 +552,7 @@ def esewa_intent_callback_view(request: Request) -> Response:
     then delegate to the service layer for status resolution and fulfilment.
 
     Query param:
-        transaction_uuid â€” appended to callback_url at booking time so we can
+        transaction_uuid — appended to callback_url at booking time so we can
                            locate the transaction even before parsing the body.
     """
     payload = request.data
@@ -590,8 +589,8 @@ def esewa_intent_redirect_view(request: Request) -> Response:
     callback was not delivered (e.g. network issue, IP not whitelisted).
 
     Query params:
-        correlation_id   â€” from the eSewa deep-link redirect parameters.
-        transaction_uuid â€” from the original booking.
+        correlation_id   — from the eSewa deep-link redirect parameters.
+        transaction_uuid — from the original booking.
     """
     logger.info(
         "eSewa redirect poll",
@@ -609,10 +608,10 @@ def esewa_intent_redirect_view(request: Request) -> Response:
 
 ---
 
-## 7. Step 4 â€” Server-Side Status Verification
+## 7. Step 4 — Server-Side Status Verification
 
 > [!IMPORTANT]
-> **Always verify payment status server-side via the eSewa status API.** Do not mark a transaction as complete based solely on the callback body â€” the callback can be spoofed or replayed. The status API call is the authoritative source of truth.
+> **Always verify payment status server-side via the eSewa status API.** Do not mark a transaction as complete based solely on the callback body — the callback can be spoofed or replayed. The status API call is the authoritative source of truth.
 
 ```python
 def _check_payment_status(booking_id: str, correlation_id: str) -> EsewaPaymentStatus:
@@ -683,7 +682,7 @@ def resolve_payment_status(
     apply fulfilment logic, and return a response tuple.
 
     This function is called by both the server-side callback view and the
-    mobile-side redirect polling view â€” ensuring both paths share identical
+    mobile-side redirect polling view — ensuring both paths share identical
     business logic.
 
     Returns:
@@ -704,14 +703,14 @@ def resolve_payment_status(
         )
         return {"detail": "Transaction not found."}, 404
 
-    # â”€â”€ Idempotency guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ── Idempotency guard ────────────────────────────────────────────────────
     # If this transaction was already approved by a prior callback delivery,
     # acknowledge success without re-running fulfilment logic.
     if _is_already_approved(transaction, is_subscription):
-        logger.info("Transaction already approved â€” returning cached success.")
+        logger.info("Transaction already approved — returning cached success.")
         return {"detail": "Payment already confirmed."}, 200
 
-    # â”€â”€ Reconstruct booking identifiers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ── Reconstruct booking identifiers ─────────────────────────────────────
     raw_id = _get_raw_id(transaction, is_subscription)
     try:
         booking_result = EsewaBookingResult.from_composite(raw_id)
@@ -719,7 +718,7 @@ def resolve_payment_status(
         logger.error("Could not reconstruct booking identifiers from '%s'", raw_id)
         return {"detail": "Transaction data is malformed."}, 500
 
-    # â”€â”€ Verify with eSewa â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ── Verify with eSewa ────────────────────────────────────────────────────
     try:
         payment_status = _check_payment_status(
             booking_id=booking_result.booking_id,
@@ -729,7 +728,7 @@ def resolve_payment_status(
         logger.exception("eSewa status check failed: %s", exc)
         return {"detail": "Could not verify payment status. Please try again."}, 502
 
-    # â”€â”€ Act on status â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ── Act on status ────────────────────────────────────────────────────────
     if payment_status is EsewaPaymentStatus.SUCCESS:
         _mark_approved(transaction, is_subscription)
         _run_fulfilment(transaction, is_subscription)
@@ -767,11 +766,11 @@ def _post_to_esewa(url: str, payload: dict) -> Response:
         response.raise_for_status()
         return response
     except Timeout:
-        logger.error("eSewa API timed out after %ds â€” URL: %s", _ESEWA_REQUEST_TIMEOUT, url)
+        logger.error("eSewa API timed out after %ds — URL: %s", _ESEWA_REQUEST_TIMEOUT, url)
         raise
     except HTTPError as exc:
         logger.error(
-            "eSewa API returned HTTP %s â€” URL: %s â€” Body: %s",
+            "eSewa API returned HTTP %s — URL: %s — Body: %s",
             exc.response.status_code,
             url,
             exc.response.text[:500],
@@ -781,7 +780,7 @@ def _post_to_esewa(url: str, payload: dict) -> Response:
 
 ---
 
-## 8. Step 5 â€” Django Routing
+## 8. Step 5 — Django Routing
 
 ```python
 # payment_management/urls.py
@@ -796,13 +795,13 @@ from payment_management.views.esewa_views import (
 app_name = "payment_management"
 
 urlpatterns = [
-    # Server-side webhook â€” called by eSewa after payment
+    # Server-side webhook — called by eSewa after payment
     path(
         "esewa-intent/callback/",
         esewa_intent_callback_view,
         name="esewa_intent_callback",
     ),
-    # Mobile-side polling â€” called by your app on return from eSewa
+    # Mobile-side polling — called by your app on return from eSewa
     path(
         "esewa-intent/redirect/",
         esewa_intent_redirect_view,
@@ -831,7 +830,7 @@ https://api.yourdomain.com/api/payments/esewa-intent/callback/?transaction_uuid=
 # settings.py
 ALLOWED_HOSTS = ["api.yourdomain.com"]
 
-# Required if behind nginx / AWS ALB â€” lets Django resolve https:// correctly
+# Required if behind nginx / AWS ALB — lets Django resolve https:// correctly
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 USE_X_FORWARDED_HOST    = True
 ```
@@ -844,26 +843,26 @@ This section is the reason we wrote this post.
 
 ### The symptom
 
-After deploying to production, payments appeared to complete successfully on the user's side â€” the eSewa app showed "Payment Successful" â€” but our backend never received the callback. Transactions sat in `pending` indefinitely.
+After deploying to production, payments appeared to complete successfully on the user's side — the eSewa app showed "Payment Successful" — but our backend never received the callback. Transactions sat in `pending` indefinitely.
 
 ```
 Production logs from our callback endpoint:
   [nothing]
 
 Manual curl to the same endpoint:
-  HTTP 200 OK  â† endpoint is alive and reachable
+  HTTP 200 OK  ←← endpoint is alive and reachable
 ```
 
 ### The debugging timeline
 
 | Check | Result |
 |---|---|
-| Callback endpoint responds to manual `POST` | âœ… Works |
-| nginx access log â€” any request from eSewa IPs | âŒ Zero hits |
-| Firewall â€” port 443 open to public | âœ… Open |
-| `callback_url` in booking payload â€” correct domain | âœ… Correct |
-| SSL certificate â€” valid, no errors | âœ… Valid |
-| Sandbox environment â€” callbacks arriving | âœ… Works |
+| Callback endpoint responds to manual `POST` | ✅ Works |
+| nginx access log — any request from eSewa IPs | ❌ Zero hits |
+| Firewall — port 443 open to public | ✅ Open |
+| `callback_url` in booking payload — correct domain | ✅ Correct |
+| SSL certificate — valid, no errors | ✅ Valid |
+| Sandbox environment — callbacks arriving | ✅ Works |
 
 The divergence between sandbox (working) and production (silent) was the key signal. Everything on our infrastructure was correct.
 
@@ -885,12 +884,12 @@ curl -s https://api.ipify.org
 curl -s https://ifconfig.me
 ```
 
-Provide this IP to the eSewa merchant support team â€” via email or their merchant portal â€” and ask them to whitelist it for callback delivery. In our case, the turnaround was same-day.
+Provide this IP to the eSewa merchant support team — via email or their merchant portal — and ask them to whitelist it for callback delivery. In our case, the turnaround was same-day.
 
 Once whitelisted, callbacks began arriving immediately without any code changes.
 
 > [!IMPORTANT]
-> **If your eSewa callback endpoint never receives requests in production but works perfectly in sandbox, assume IP whitelisting first.** Contact eSewa support before spending time investigating your own infrastructure â€” there is nothing to fix on your end.
+> **If your eSewa callback endpoint never receives requests in production but works perfectly in sandbox, assume IP whitelisting first.** Contact eSewa support before spending time investigating your own infrastructure — there is nothing to fix on your end.
 
 ### The failsafe: mobile-side polling
 
@@ -900,7 +899,7 @@ Because server-side callbacks can fail silently for many reasons (IP not whiteli
 1. User is returned to your app via redirect_url (deep-link)
 2. Mobile app immediately calls:
    GET /api/payments/esewa-intent/redirect/?transaction_uuid=<uuid>
-3. Backend calls eSewa status API â†’ returns authoritative result
+3. Backend calls eSewa status API → returns authoritative result
 4. App renders success or failure screen
 ```
 
@@ -912,19 +911,19 @@ Both the callback endpoint and the redirect endpoint route through the same `res
 
 ### Before going live
 
-- [ ] `ESEWA_INTENT_KEY` is the **raw Base64 string** â€” pass it as-is to HMAC, never decode it.
-- [ ] `amount` is an **integer in NPR** in the booking payload â€” no floats, no decimals.
-- [ ] Message string field order matches `signed_field_names` **exactly** â€” wrong order = wrong digest.
-- [ ] `amount` normalisation in signature verification: `"500.0"` â†’ `"500"`.
+- [ ] `ESEWA_INTENT_KEY` is the **raw Base64 string** — pass it as-is to HMAC, never decode it.
+- [ ] `amount` is an **integer in NPR** in the booking payload — no floats, no decimals.
+- [ ] Message string field order matches `signed_field_names` **exactly** — wrong order = wrong digest.
+- [ ] `amount` normalisation in signature verification: `"500.0"` → `"500"`.
 - [ ] Callback view is `@csrf_exempt` with `@permission_classes([AllowAny])`.
-- [ ] `callback_url` is a **public HTTPS URL** â€” not `localhost`, not a private IP.
+- [ ] `callback_url` is a **public HTTPS URL** — not `localhost`, not a private IP.
 - [ ] `redirect_url` is your **mobile app deep-link scheme** (`yourapp://...`).
 - [ ] Contact eSewa and confirm your production server's **outbound IP is whitelisted**.
-- [ ] Implement **idempotency** â€” re-processing an already-approved transaction must be a no-op.
+- [ ] Implement **idempotency** — re-processing an already-approved transaction must be a no-op.
 - [ ] Always **re-verify status** via the status API after receiving a callback.
 - [ ] Store all three identifiers: `transaction_uuid`, `booking_id`, `correlation_id`.
 - [ ] Mobile app **polls your redirect endpoint** as a fallback when returning from eSewa.
-- [ ] Signature comparison uses `hmac.compare_digest()` â€” never `==`.
+- [ ] Signature comparison uses `hmac.compare_digest()` — never `==`.
 
 ### eSewa API response codes
 
@@ -932,409 +931,13 @@ Both the callback endpoint and the redirect endpoint route through the same `res
 |---|---|
 | `IP-200` | Success |
 | `IP-201` | Intent created (success for `/book`) |
-| anything else | Failure â€” inspect `error_message` field |
+| anything else | Failure — inspect `error_message` field |
 
 ### Payment status values
 
 | Value | Meaning |
 |---|---|
-| `SUCCESS` | Payment confirmed â€” fulfil the order |
-| `FAILED` | Payment failed â€” notify user |
-| `CANCELED` | User cancelled â€” allow retry |
-| `PENDING` | Not yet resolved â€” poll again later |
-
----
-
-## 11. Full Production Code
-
-### `payment_management/constants.py`
-
-```python
-from enum import StrEnum
-
-
-class EsewaResponseCode(StrEnum):
-    SUCCESS = "IP-200"
-    CREATED = "IP-201"
-
-
-class EsewaPaymentStatus(StrEnum):
-    SUCCESS  = "SUCCESS"
-    FAILED   = "FAILED"
-    CANCELED = "CANCELED"
-    PENDING  = "PENDING"
-
-
-BOOKING_SIGNED_FIELDS = "product_code,amount,transaction_uuid"
-STATUS_SIGNED_FIELDS  = "booking_id,product_code,correlation_id"
-```
-
-### `payment_management/exceptions.py`
-
-```python
-class EsewaIntentError(Exception):
-    """Base exception for all eSewa Intent API errors."""
-
-class EsewaBookingError(EsewaIntentError):
-    """Raised when /intent/book returns a non-success response."""
-
-class EsewaStatusCheckError(EsewaIntentError):
-    """Raised when /intent/status returns a non-success response."""
-
-class EsewaSignatureError(EsewaIntentError):
-    """Raised when HMAC signature verification fails."""
-```
-
-### `payment_management/services/esewa_service.py`
-
-```python
-from __future__ import annotations
-
-import base64
-import hashlib
-import hmac
-import logging
-import os
-import uuid
-from dataclasses import dataclass
-
-import requests
-from requests import HTTPError, Timeout
-
-from payment_management.constants import (
-    BOOKING_SIGNED_FIELDS,
-    STATUS_SIGNED_FIELDS,
-    EsewaPaymentStatus,
-    EsewaResponseCode,
-)
-from payment_management.exceptions import (
-    EsewaBookingError,
-    EsewaSignatureError,
-    EsewaStatusCheckError,
-)
-
-logger = logging.getLogger("payment.esewa")
-
-_ESEWA_REQUEST_TIMEOUT = 20
-
-
-# â”€â”€â”€ Configuration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-class EsewaConfig:
-    @staticmethod
-    def book_url() -> str:
-        return os.getenv(
-            "ESEWA_INTENT_BOOK_URL",
-            "https://checkout.esewa.com.np/api/client/intent/payment/book",
-        ).strip()
-
-    @staticmethod
-    def status_url() -> str:
-        return os.getenv(
-            "ESEWA_INTENT_STATUS_URL",
-            "https://checkout.esewa.com.np/api/client/intent/payment/status",
-        ).strip()
-
-    @staticmethod
-    def product_code() -> str:
-        value = os.getenv("ESEWA_INTENT_PRODUCT_CODE", "").strip()
-        if not value:
-            raise EnvironmentError("ESEWA_INTENT_PRODUCT_CODE is not configured.")
-        return value
-
-    @staticmethod
-    def secret_key() -> str:
-        value = os.getenv("ESEWA_INTENT_KEY", "").strip()
-        if not value:
-            raise EnvironmentError("ESEWA_INTENT_KEY is not configured.")
-        return value
-
-    @staticmethod
-    def backend_url() -> str:
-        return os.getenv("BACKEND_API_URL", "https://api.yourdomain.com").rstrip("/")
-
-
-# â”€â”€â”€ Value objects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-@dataclass(frozen=True, slots=True)
-class EsewaBookingResult:
-    transaction_uuid: str
-    booking_id: str
-    deeplink: str
-    correlation_id: str
-
-    @property
-    def composite_id(self) -> str:
-        return f"{self.transaction_uuid}:{self.booking_id}:{self.correlation_id}"
-
-    @classmethod
-    def from_composite(cls, value: str) -> "EsewaBookingResult":
-        parts = value.split(":")
-        if len(parts) < 3:  # noqa: PLR2004
-            raise ValueError(f"Cannot reconstruct EsewaBookingResult from '{value}'.")
-        return cls(
-            transaction_uuid=parts[0],
-            booking_id=parts[1],
-            correlation_id=parts[2],
-            deeplink="",
-        )
-
-
-# â”€â”€â”€ Crypto â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-def _build_signature(secret: str, fields: dict[str, str], field_order: str) -> str:
-    ordered = [n.strip() for n in field_order.split(",")]
-    message_parts = []
-    for name in ordered:
-        if name not in fields:
-            raise ValueError(f"Field '{name}' required for signature but not provided.")
-        message_parts.append(f"{name}={fields[name]}")
-    message = ",".join(message_parts)
-    digest  = hmac.new(secret.encode(), message.encode(), hashlib.sha256).digest()
-    return base64.b64encode(digest).decode()
-
-
-def _normalise_amount(value: str | int | float) -> str:
-    try:
-        parsed = float(value)
-        return str(int(parsed)) if parsed.is_integer() else str(parsed)
-    except (TypeError, ValueError):
-        return str(value)
-
-
-# â”€â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-def book_payment_intent(
-    *,
-    amount_npr: int,
-    customer_id: str,
-    purpose: str,
-    app_scheme: str = "yourapp",
-) -> EsewaBookingResult:
-    product_code     = EsewaConfig.product_code()
-    transaction_uuid = str(uuid.uuid4())
-
-    signature = _build_signature(
-        secret=EsewaConfig.secret_key(),
-        fields={
-            "product_code":     product_code,
-            "amount":           str(amount_npr),
-            "transaction_uuid": transaction_uuid,
-        },
-        field_order=BOOKING_SIGNED_FIELDS,
-    )
-
-    payload = {
-        "product_code":       product_code,
-        "amount":             amount_npr,
-        "transaction_uuid":   transaction_uuid,
-        "signed_field_names": BOOKING_SIGNED_FIELDS,
-        "signature":          signature,
-        "callback_url": (
-            f"{EsewaConfig.backend_url()}/api/payments/esewa-intent/callback/"
-            f"?transaction_uuid={transaction_uuid}"
-        ),
-        "redirect_url": f"{app_scheme}://payment-callback/?transaction_uuid={transaction_uuid}",
-        "properties": {"customer_id": customer_id, "remarks": purpose},
-    }
-
-    logger.info("Booking eSewa intent", extra={"transaction_uuid": transaction_uuid})
-    response = _post_to_esewa(EsewaConfig.book_url(), payload)
-    result   = response.json()
-
-    if result.get("code") not in {EsewaResponseCode.SUCCESS, EsewaResponseCode.CREATED}:
-        raise EsewaBookingError(
-            f"eSewa rejected booking: {result.get('error_message') or result!r}"
-        )
-
-    data = result["data"]
-    return EsewaBookingResult(
-        transaction_uuid=transaction_uuid,
-        booking_id=data["booking_id"],
-        deeplink=data["deeplink"],
-        correlation_id=data["correlation_id"],
-    )
-
-
-def verify_callback_signature(payload: dict) -> bool:
-    raw_signature = payload.get("signature")
-    field_names   = payload.get("signed_field_names")
-
-    if not raw_signature or not field_names:
-        raise EsewaSignatureError(
-            "Callback missing 'signature' or 'signed_field_names'."
-        )
-
-    fields: dict[str, str] = {}
-    for field in (f.strip() for f in field_names.split(",")):
-        raw = payload.get(field)
-        if raw is None:
-            logger.warning("Declared signature field '%s' missing from payload.", field)
-            return False
-        fields[field] = _normalise_amount(raw) if field == "amount" else str(raw)
-
-    expected = _build_signature(
-        secret=EsewaConfig.secret_key(),
-        fields=fields,
-        field_order=field_names,
-    )
-    valid = hmac.compare_digest(raw_signature, expected)
-    if not valid:
-        logger.warning("eSewa signature mismatch.", extra={"received": raw_signature})
-    return valid
-
-
-def check_payment_status(booking_id: str, correlation_id: str) -> EsewaPaymentStatus:
-    product_code = EsewaConfig.product_code()
-    signature    = _build_signature(
-        secret=EsewaConfig.secret_key(),
-        fields={
-            "booking_id":     booking_id,
-            "product_code":   product_code,
-            "correlation_id": correlation_id,
-        },
-        field_order=STATUS_SIGNED_FIELDS,
-    )
-
-    payload = {
-        "booking_id":         booking_id,
-        "product_code":       product_code,
-        "correlation_id":     correlation_id,
-        "signed_field_names": STATUS_SIGNED_FIELDS,
-        "signature":          signature,
-    }
-
-    response = _post_to_esewa(EsewaConfig.status_url(), payload)
-    result   = response.json()
-
-    if result.get("code") != EsewaResponseCode.SUCCESS:
-        raise EsewaStatusCheckError(f"Status API error: {result!r}")
-
-    try:
-        return EsewaPaymentStatus(result["data"]["status"])
-    except (KeyError, ValueError):
-        return EsewaPaymentStatus.PENDING
-
-
-# â”€â”€â”€ Internal HTTP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-def _post_to_esewa(url: str, payload: dict) -> requests.Response:
-    try:
-        resp = requests.post(
-            url,
-            json=payload,
-            headers={"Content-Type": "application/json"},
-            timeout=_ESEWA_REQUEST_TIMEOUT,
-        )
-        resp.raise_for_status()
-        return resp
-    except Timeout:
-        logger.error("eSewa request timed out â€” %s", url)
-        raise
-    except HTTPError as exc:
-        logger.error(
-            "eSewa HTTP error %s â€” %s â€” %.500s",
-            exc.response.status_code, url, exc.response.text,
-        )
-        raise
-```
-
-### `payment_management/views/esewa_views.py`
-
-```python
-from __future__ import annotations
-
-import logging
-
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status
-from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework.permissions import AllowAny
-from rest_framework.request import Request
-from rest_framework.response import Response
-
-from payment_management.exceptions import EsewaSignatureError
-from .exceptions import EsewaSignatureError
-from .services import (
-    verify_callback_signature,
-    resolve_payment_status,
-)
-
-logger = logging.getLogger("esewa.views")
-
-
-@api_view(["POST"])
-@authentication_classes([])
-@permission_classes([AllowAny])
-@csrf_exempt
-def esewa_intent_callback_view(request: Request) -> Response:
-    """Server-side webhook â€” eSewa POSTs here after payment."""
-    payload = request.data
-    logger.info("eSewa callback received", extra={"keys": list(payload.keys())})
-
-    try:
-        if not verify_callback_signature(payload):
-            return Response({"detail": "Invalid signature."}, status=status.HTTP_400_BAD_REQUEST)
-    except EsewaSignatureError as exc:
-        logger.warning("Malformed eSewa callback: %s", exc)
-        return Response({"detail": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
-
-    result, http_status = resolve_payment_status(
-        correlation_id=payload.get("correlation_id"),
-        transaction_uuid=request.GET.get("transaction_uuid"),
-    )
-    return Response(result, status=http_status)
-
-
-@api_view(["GET"])
-@permission_classes([AllowAny])
-def esewa_intent_redirect_view(request: Request) -> Response:
-    """Mobile-side polling â€” called by the app when returning from eSewa."""
-    logger.info(
-        "eSewa redirect poll",
-        extra={
-            "correlation_id":   request.GET.get("correlation_id"),
-            "transaction_uuid": request.GET.get("transaction_uuid"),
-        },
-    )
-    result, http_status = resolve_payment_status(
-        correlation_id=request.GET.get("correlation_id"),
-        transaction_uuid=request.GET.get("transaction_uuid"),
-    )
-    return Response(result, status=http_status)
-```
-
-### `payment_management/urls.py`
-
-```python
-from django.urls import path
-
-from payment_management.views.esewa_views import (
-    esewa_intent_callback_view,
-    esewa_intent_redirect_view,
-)
-
-app_name = "payment_management"
-
-urlpatterns = [
-    path("esewa-intent/callback/", esewa_intent_callback_view, name="esewa_intent_callback"),
-    path("esewa-intent/redirect/", esewa_intent_redirect_view, name="esewa_intent_redirect"),
-]
-```
-
----
-
-## Final Thoughts
-
-The eSewa Intent API v2 is a well-designed, API-first payment flow that produces a significantly better UX for mobile users. The integration surface is small and the signature scheme is straightforward.
-
-The **IP whitelisting requirement** is the single most dangerous footgun â€” it is completely silent, not documented, and will only surface in production. Treat it as a prerequisite, not an afterthought:
-
-> Before you test payments in production, email eSewa support your server's outbound IP and explicitly ask them to whitelist it for callback delivery.
-
-Everything else is just careful reading of field order, consistent amount normalisation, and proper separation between the callback path and the status-check path.
-
----
-
-*Have questions or spotted an error? Open an issue or reach out.*
-
+| `SUCCESS` | Payment confirmed — fulfil the order |
+| `FAILED` | Payment failed — notify user |
+| `CANCELED` | User cancelled — allow retry |
+| `PENDING` | Not yet resolved — poll again later |

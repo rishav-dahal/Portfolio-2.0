@@ -63,8 +63,8 @@ params:
 
   env: production
   title: "Rishav Dahal"
-  description: "Portfolio, engineering blogs, and research by Rishav Dahal — CTO at DLPlatforms, Backend & DevOps Engineer, and AI Researcher specializing in scalable cloud systems, high-availability APIs, and distributed architectures."
-  keywords: [Portfolio, Rishav Dahal, CTO, DLPlatforms, Cytro, Backend Engineer, DevOps, Python, Django, FastAPI, Go, Docker, CI/CD, ICICSET, NCIT, Machine Learning]
+  description: "Portfolio, engineering blogs, and research by Rishav Dahal — CTO at DLPlatforms and Backend & DevOps Engineer specializing in scalable cloud systems, high-availability APIs, and distributed architectures."
+  keywords: [Portfolio, Rishav Dahal, CTO, DLPlatforms, DLSurf, FitHisaab, Automyc, Backend Engineer, DevOps, Python, Django, FastAPI, Go, Docker, CI/CD, ICICSET, NCIT]
   author: "Rishav Dahal"
   images: ["images/default-og-image.jpg"]
   DateFormat: "January 2, 2006"
@@ -94,7 +94,7 @@ params:
   profileMode:
     enabled: true
     title: "Hi, I'm Rishav Dahal <span class=\"wave-emoji\">👋</span>"
-    subtitle: "CTO at DLPlatforms • Backend & DevOps Engineer • AI Researcher (ICICSET 2025). Building high-availability APIs, scalable cloud automation, and applied machine learning systems."
+    subtitle: "CTO at DLPlatforms • Backend & DevOps Engineer • Research Author (ICICSET 2025). Building high-availability APIs, scalable cloud automation, and distributed systems."
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
@@ -112,7 +112,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "👋 Welcome to Rishav's Portfolio"
-    Content: "Explore my backend systems, cloud architectures, AI integrations, and practical software engineering writeups."
+    Content: "Explore my backend systems, cloud architectures, research writeups, and practical software engineering guides."
 
   socialIcons:
     - name: email

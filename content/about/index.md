@@ -1,6 +1,5 @@
 ---
 title: "About Me"
-description: "Rishav Dahal is a CTO, Backend & DevOps Engineer, and AI Researcher based in Nepal, specializing in scalable cloud systems, high-availability APIs, and distributed architectures."
 date: 2025-01-10T10:00:00+05:45
 draft: false
 comments: false
@@ -11,48 +10,43 @@ ShowPostNavLinks: false
 
 ## Hi, I'm Rishav Dahal 👋
 
-I am a **CTO, Backend & DevOps Engineer, and AI Researcher** based in Kathmandu, Nepal. I bridge the gap between complex software architecture, scalable cloud infrastructure, and practical machine learning systems. 
+I am the **Chief Technology Officer (CTO)** at **DLPlatforms Pty Ltd** and a **Backend & DevOps Engineer** based in Kathmandu, Nepal. I specialize in architecting resilient cloud infrastructure, high-concurrency APIs, and distributed backend systems.
 
-Whether designing high-throughput RESTful microservices, automating multi-cloud container pipelines, or publishing peer-reviewed research on NLP and topic modeling, I build systems engineered for **resilience, performance, and automated scale**.
+Whether scaling production platforms across **DLSurf**, **FitHisaab**, and **Automyc**, automating multi-cloud container pipelines, or publishing peer-reviewed research on unsupervised query refinement (ICICSET 2025), I build software engineered for **resilience, performance, and automated scale**.
 
 ---
 
 ### 💼 Leadership & Professional Roles
 
-- **Chief Technology Officer (CTO)** — **DLPlatforms Pty Ltd**
-  - Spearheading technical strategy, cloud infrastructure, and backend engineering for production mobile and web platforms (including the *FitHisaab: Gym & Diet Tracker* ecosystem).
-  - Architecting high-availability API stacks, resilient database caching layers, and automated deployment workflows.
-- **Chief Executive Officer (CEO)** — **Cytro I.T. Solution Pvt. Ltd.**
-  - Leading software architecture, client technical advisory, and enterprise digital transformation projects.
-  - Directing cross-functional engineering teams across backend development, UI/UX, and cloud deployments.
-- **Creator & Platform Engineer** — **[dl.surf](https://dl.surf)**
-  - Architected and deployed a high-performance content delivery and monetization platform.
-  - Authoring deep-dive technical engineering tutorials focusing on Django architecture, cloud deployments, and production reliability.
+- **Chief Technology Officer (CTO) — DLPlatforms Pty Ltd**
+  - Leading technical strategy, cloud infrastructure, and backend engineering across three core products:
+    - **[DLSurf](https://dl.surf/)**: High-performance digital content delivery and monetization platform.
+    - **FitHisaab**: Comprehensive mobile health, gym, and diet tracking ecosystem.
+    - **Automyc**: Intelligent workflow automation and system integration platform.
+  - Architecting high-availability API stacks, distributed caching layers, and automated multi-cloud deployment pipelines.
 
 ---
 
 ### 🎓 Education & Academic Research
 
-- **B.E. in Software Engineering** — **Nepal College of Information Technology (NCIT)**
+- **B.E. in Software Engineering — Nepal College of Information Technology (NCIT)**
   - Affiliated with *Pokhara University*, Nepal.
-  - Focus areas: Distributed Systems, Database Management, Algorithms, and Artificial Intelligence.
+  - Focus areas: Distributed Systems, Database Management, Algorithms, and Software Architecture.
 - **Published Research Paper (ICICSET 2025)**:
   - **"Query Refinement using Latent Dirichlet Allocation"**  
     *Presented and published at the International Conference on Innovation in Computing, Science, Engineering and Technology (ICICSET 2025).*
-  - Investigated unsupervised query expansion techniques, utilizing **Latent Dirichlet Allocation (LDA)** topic modeling and semantic coherence evaluation to dramatically improve search relevance in unstructured text corpora.
+  - Investigated unsupervised query expansion techniques, utilizing **Latent Dirichlet Allocation (LDA)** topic modeling and semantic coherence evaluation to improve search relevance in unstructured text corpora.
 
 ---
 
-### 🏆 Honors, Awards & Campus Leadership
+### 🏆 Honors, Awards & Hackathons
 
 - 🥇 **Winner — Hult Prize NCIT 2023** (Team *Weaver*)
-  - Championed a circular-economy enterprise model aimed at reducing textile waste by upcycling and redesigning used clothing into sustainable modular fashion.
-- 🎨 **Best UI/UX Award — Sagarmatha Techfest Hackathon 2023**
-  - Recognized for designing an intuitive, accessible, and responsive user experience under strict hackathon time constraints.
-- 🌟 **Campus Director & Organizing Committee — Hult Prize at NCIT (2022–2023)**
-  - Led and coordinated university-wide social entrepreneurship bootcamps, mentored emerging student founders, and managed IT and graphic design operations.
-- 🚀 **Hackathon Solutions**:
-  - Built **Shiskhya** (an NLP-based automated lecture summarization assistant) and **Swashya** (a centralized electronic healthcare records platform).
+  - Championed a circular-economy enterprise model aimed at reducing textile waste by upcycling used clothing into sustainable modular fashion.
+- 🏆 **Winner — Hacademia (1st Edition) at King's College**
+  - Developed and won with **Sikshya**, an NLP-based lecture summarization and learning assistant platform.
+- 🎨 **Best UI/UX Award — Sagarmatha Hackathon (Sagarmatha Tech Fest)**
+  - Won the Best UI/UX award with **Swasthya**, a centralized healthcare record management and accessible medical platform.
 
 ---
 
@@ -60,7 +54,7 @@ Whether designing high-throughput RESTful microservices, automating multi-cloud 
 
 - **Backend Architecture & Distributed Systems**: Architecting modular microservices and high-concurrency APIs using **Python (Django, FastAPI)** and **Go (Fiber)** with asynchronous task queues (Celery, Redis).
 - **DevOps, CI/CD & Cloud Infrastructure**: Containerizing production workloads with **Docker**, configuring automated delivery pipelines with **GitHub Actions**, and managing cloud infrastructure across **AWS, GCP, Linux (Ubuntu/Debian)**, and reverse proxies (Nginx).
-- **Applied AI, NLP & Computer Vision**: Transitioning research-grade models into low-latency production pipelines using **OpenCV, Transformers, BERT, LDA topic models, and OCR engines**.
+- **Information Retrieval & Document Processing**: Researching unsupervised query expansion and topic modeling (LDA) along with image processing pipelines using **OpenCV and Tesseract OCR**.
 - **Data Engineering & Performance Optimization**: Relational database modeling, query tuning, connection pooling, and multi-tier caching with **PostgreSQL, MySQL, and Redis**.
 
 ---
@@ -73,7 +67,7 @@ Whether designing high-throughput RESTful microservices, automating multi-cloud 
 | **Backend Frameworks** | Django, Django REST Framework, FastAPI, Go Fiber, Flask |
 | **DevOps & Cloud** | Docker, Docker Compose, GitHub Actions, Linux Administration, Nginx, AWS, GCP, Cloudflare |
 | **Databases & Caching** | PostgreSQL, Redis, MySQL, SQLite |
-| **AI, ML & Vision** | OpenCV, Scikit-learn, Latent Dirichlet Allocation (LDA), BERT, NLP, Tesseract OCR |
+| **Algorithms & Vision** | Latent Dirichlet Allocation (LDA), NLP, OpenCV, Tesseract OCR, Scikit-learn |
 | **Tooling & Workflows** | Git / GitHub, Postman, Linux Shell / Bash, Figma, Jira |
 
 ---
@@ -89,11 +83,11 @@ Whether designing high-throughput RESTful microservices, automating multi-cloud 
 
 ### 🤝 Strategic Collaboration & Consulting
 
-I actively advise and collaborate with **early-stage startups, tech companies, and engineering teams** looking for technical leadership in:
+I actively collaborate with **startups, tech companies, and engineering teams** looking for technical leadership in:
 - Taking scalable software MVPs from idea to production-grade deployment.
 - Modernizing backend architectures, decoupling legacy monolithic apps, and scaling APIs.
 - Establishing automated CI/CD pipelines, Docker containerization, and cloud infrastructure.
-- Integrating applied AI, NLP, and computer vision models into real-world business workflows.
+- Designing high-reliability distributed databases and caching strategies.
 
 ---
 

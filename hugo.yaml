@@ -63,8 +63,8 @@ params:
 
   env: production
   title: "Rishav Dahal"
-  description: "Portfolio, engineering blogs, and projects by Rishav Dahal — Backend & DevOps Engineer specializing in high-availability systems, cloud infrastructure, and AI integration."
-  keywords: [Portfolio, Backend Engineer, DevOps, Python, Django, FastAPI, Go, Cloud, Docker, CI/CD, Machine Learning, Rishav Dahal]
+  description: "Portfolio, engineering blogs, and research by Rishav Dahal — CTO at DLPlatforms, Backend & DevOps Engineer, and AI Researcher specializing in scalable cloud systems, high-availability APIs, and distributed architectures."
+  keywords: [Portfolio, Rishav Dahal, CTO, DLPlatforms, Cytro, Backend Engineer, DevOps, Python, Django, FastAPI, Go, Docker, CI/CD, ICICSET, NCIT, Machine Learning]
   author: "Rishav Dahal"
   images: ["images/default-og-image.jpg"]
   DateFormat: "January 2, 2006"
@@ -94,11 +94,11 @@ params:
   profileMode:
     enabled: true
     title: "Hi, I'm Rishav Dahal <span class=\"wave-emoji\">👋</span>"
-    subtitle: "Backend & DevOps Engineer bridging robust APIs, scalable cloud automation, and practical machine learning into high-availability production."
+    subtitle: "CTO at DLPlatforms • Backend & DevOps Engineer • AI Researcher (ICICSET 2025). Building high-availability APIs, scalable cloud automation, and applied machine learning systems."
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: "Backend & DevOps Engineer"
+    imageTitle: "CTO & Backend / DevOps Engineer"
     buttons:
       - name: Blogs
         url: blogs

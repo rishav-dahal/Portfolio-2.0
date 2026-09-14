@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "Rishav Dahal is a Backend & DevOps Engineer specializing in scalable APIs, cloud automation, distributed databases, and production machine learning systems."
+description: "Rishav Dahal is a CTO, Backend & DevOps Engineer, and AI Researcher based in Nepal, specializing in scalable cloud systems, high-availability APIs, and distributed architectures."
 date: 2025-01-10T10:00:00+05:45
 draft: false
 comments: false
@@ -11,57 +11,95 @@ ShowPostNavLinks: false
 
 ## Hi, I'm Rishav Dahal 👋
 
-I am a **Backend & DevOps Engineer** based in Nepal. I bridge the gap between robust application logic and scalable cloud infrastructure—architecting high-availability backends, automating CI/CD pipelines, and productionizing machine learning systems into production environments.
+I am a **CTO, Backend & DevOps Engineer, and AI Researcher** based in Kathmandu, Nepal. I bridge the gap between complex software architecture, scalable cloud infrastructure, and practical machine learning systems. 
 
-My engineering philosophy centers around simplicity, reliability, and automated scale: building systems that handle production workloads smoothly with minimal operational overhead.
+Whether designing high-throughput RESTful microservices, automating multi-cloud container pipelines, or publishing peer-reviewed research on NLP and topic modeling, I build systems engineered for **resilience, performance, and automated scale**.
 
 ---
 
-### 🛠️ Core Specializations
+### 💼 Leadership & Professional Roles
 
-- **Backend Architecture & APIs**: Designing resilient, modular microservices and high-throughput RESTful APIs using **Python (Django, FastAPI)** and **Go (Fiber)**.
-- **DevOps & Cloud Engineering**: Automating infrastructure-as-code, containerization, and continuous delivery pipelines with **Docker, GitHub Actions, Ansible, Terraform, AWS, and GCP**.
-- **Production Machine Learning & Computer Vision**: Transitioning models from prototypes to low-latency production inference pipelines using **OpenCV, OCR engines, NLP, and vector embeddings**.
-- **Database & Performance Optimization**: Designing normalized schemas, indexing strategies, and caching layers with **PostgreSQL, MySQL, and Redis**.
+- **Chief Technology Officer (CTO)** — **DLPlatforms Pty Ltd**
+  - Spearheading technical strategy, cloud infrastructure, and backend engineering for production mobile and web platforms (including the *FitHisaab: Gym & Diet Tracker* ecosystem).
+  - Architecting high-availability API stacks, resilient database caching layers, and automated deployment workflows.
+- **Chief Executive Officer (CEO)** — **Cytro I.T. Solution Pvt. Ltd.**
+  - Leading software architecture, client technical advisory, and enterprise digital transformation projects.
+  - Directing cross-functional engineering teams across backend development, UI/UX, and cloud deployments.
+- **Creator & Platform Engineer** — **[dl.surf](https://dl.surf)**
+  - Architected and deployed a high-performance content delivery and monetization platform.
+  - Authoring deep-dive technical engineering tutorials focusing on Django architecture, cloud deployments, and production reliability.
+
+---
+
+### 🎓 Education & Academic Research
+
+- **B.E. in Software Engineering** — **Nepal College of Information Technology (NCIT)**
+  - Affiliated with *Pokhara University*, Nepal.
+  - Focus areas: Distributed Systems, Database Management, Algorithms, and Artificial Intelligence.
+- **Published Research Paper (ICICSET 2025)**:
+  - **"Query Refinement using Latent Dirichlet Allocation"**  
+    *Presented and published at the International Conference on Innovation in Computing, Science, Engineering and Technology (ICICSET 2025).*
+  - Investigated unsupervised query expansion techniques, utilizing **Latent Dirichlet Allocation (LDA)** topic modeling and semantic coherence evaluation to dramatically improve search relevance in unstructured text corpora.
+
+---
+
+### 🏆 Honors, Awards & Campus Leadership
+
+- 🥇 **Winner — Hult Prize NCIT 2023** (Team *Weaver*)
+  - Championed a circular-economy enterprise model aimed at reducing textile waste by upcycling and redesigning used clothing into sustainable modular fashion.
+- 🎨 **Best UI/UX Award — Sagarmatha Techfest Hackathon 2023**
+  - Recognized for designing an intuitive, accessible, and responsive user experience under strict hackathon time constraints.
+- 🌟 **Campus Director & Organizing Committee — Hult Prize at NCIT (2022–2023)**
+  - Led and coordinated university-wide social entrepreneurship bootcamps, mentored emerging student founders, and managed IT and graphic design operations.
+- 🚀 **Hackathon Solutions**:
+  - Built **Shiskhya** (an NLP-based automated lecture summarization assistant) and **Swashya** (a centralized electronic healthcare records platform).
+
+---
+
+### 🛠️ Core Technical Specializations
+
+- **Backend Architecture & Distributed Systems**: Architecting modular microservices and high-concurrency APIs using **Python (Django, FastAPI)** and **Go (Fiber)** with asynchronous task queues (Celery, Redis).
+- **DevOps, CI/CD & Cloud Infrastructure**: Containerizing production workloads with **Docker**, configuring automated delivery pipelines with **GitHub Actions**, and managing cloud infrastructure across **AWS, GCP, Linux (Ubuntu/Debian)**, and reverse proxies (Nginx).
+- **Applied AI, NLP & Computer Vision**: Transitioning research-grade models into low-latency production pipelines using **OpenCV, Transformers, BERT, LDA topic models, and OCR engines**.
+- **Data Engineering & Performance Optimization**: Relational database modeling, query tuning, connection pooling, and multi-tier caching with **PostgreSQL, MySQL, and Redis**.
 
 ---
 
 ### 🧰 Technical Toolbox
 
-| Category | Technologies & Tools |
+| Domain | Technologies & Frameworks |
 |---|---|
-| **Languages** | Python, Go, C++, SQL, JavaScript |
-| **Backend & Frameworks** | Django, Django REST Framework, FastAPI, Go Fiber |
-| **DevOps & Cloud** | Docker, GitHub Actions, CI/CD, Ansible, Terraform, AWS, GCP, Nginx, Linux |
-| **Databases & Caching** | PostgreSQL, Redis, MySQL |
-| **AI / ML & Vision** | OpenCV, Scikit-learn, NLP, Semantic Search (LDA, Embeddings), Tesseract OCR |
-| **Tools & Workflows** | Git, Postman, Linux Shell / Bash, Jira, Figma |
+| **Programming Languages** | Python, Go (Golang), Java, C, C++, SQL, JavaScript |
+| **Backend Frameworks** | Django, Django REST Framework, FastAPI, Go Fiber, Flask |
+| **DevOps & Cloud** | Docker, Docker Compose, GitHub Actions, Linux Administration, Nginx, AWS, GCP, Cloudflare |
+| **Databases & Caching** | PostgreSQL, Redis, MySQL, SQLite |
+| **AI, ML & Vision** | OpenCV, Scikit-learn, Latent Dirichlet Allocation (LDA), BERT, NLP, Tesseract OCR |
+| **Tooling & Workflows** | Git / GitHub, Postman, Linux Shell / Bash, Figma, Jira |
 
 ---
 
-### 🚀 Engineering Highlights & Research
+### 🚀 Featured Engineering Projects & Deep Dives
 
-- **[eSewa Intent Payment Gateway Integration](/blogs/esewa-intent-api-v2-django/)**: Authored a comprehensive production engineering guide and integration architecture for eSewa's v2 Intent API in Django, covering HMAC-SHA256 signatures, resilient webhook callbacks, and production failsafes.
-- **[Modular Query Refinement (NLP & Semantic Search)](/projects/modular-query-refinement/)**: Researched and built a semantic search enhancement system that analyzes intent, context, and query expansion via Latent Dirichlet Allocation (LDA) and NLP.
-- **[OCR Code Compiler 2.0](/projects/ocr-code-compiler/)**: Developed an end-to-end computer vision pipeline for extracting source code from document images with perspective correction, adaptive binarization, and sandboxed code execution.
-- **[Face Recognition Attendance System](/projects/face-recognition-attendance-system/)**: Built an automated attendance tracking pipeline using deep face embeddings, OpenCV, and real-time camera feeds.
-- **DLPlatforms / DLSurf**: Architecting platform backends and scalable microservices.
-
----
-
-### 🤝 Strategic Collaboration
-
-I actively collaborate with **early-stage startups, tech ventures, and engineering teams** looking for technical leadership to:
-- Build production-ready MVPs from zero to one.
-- Modernize and scale backend services.
-- Set up automated CI/CD and cloud deployment pipelines.
-- Integrate practical AI and computer vision models into real-world applications.
+- **[eSewa Intent Payment Gateway Integration](/blogs/esewa-intent-api-v2-django/)**: Authored a complete production architectural guide for implementing eSewa v2 Intent APIs in Django with HMAC-SHA256 cryptography and webhook failover mechanisms.
+- **[Modular Query Refinement (NLP & Semantic Search)](/projects/modular-query-refinement/)**: Researched and developed an unsupervised query enhancement engine leveraging LDA topic coherence.
+- **[OCR Code Compiler 2.0](/projects/ocr-code-compiler/)**: Developed an end-to-end computer vision pipeline for extracting source code from document images with perspective correction and sandboxed code execution.
+- **[Face Recognition Attendance System](/projects/face-recognition-attendance-system/)**: Built an automated attendance tracking pipeline using deep face embeddings and OpenCV real-time video streams.
 
 ---
 
-### 📬 Let's Connect
+### 🤝 Strategic Collaboration & Consulting
 
-- 📧 **Direct Email:** [workwithrisaav@gmail.com](mailto:workwithrisaav@gmail.com) / [contact@rishavdahal.com.np](mailto:contact@rishavdahal.com.np)
+I actively advise and collaborate with **early-stage startups, tech companies, and engineering teams** looking for technical leadership in:
+- Taking scalable software MVPs from idea to production-grade deployment.
+- Modernizing backend architectures, decoupling legacy monolithic apps, and scaling APIs.
+- Establishing automated CI/CD pipelines, Docker containerization, and cloud infrastructure.
+- Integrating applied AI, NLP, and computer vision models into real-world business workflows.
+
+---
+
+### 📬 Connect With Me
+
 - 💼 **LinkedIn:** [linkedin.com/in/risaavdahal](https://www.linkedin.com/in/risaavdahal/)
 - 🐙 **GitHub:** [github.com/rishav-dahal](https://github.com/rishav-dahal)
-- 🌍 **Website:** [rishavdahal.com.np](https://rishavdahal.com.np/)
+- 📧 **Direct Email:** [workwithrisaav@gmail.com](mailto:workwithrisaav@gmail.com)
+- 💬 **Interactive Contact Hub:** [Get in touch on the Contact Page](/contact/)

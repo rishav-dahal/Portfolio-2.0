@@ -63,8 +63,8 @@ params:
 
   env: production
   title: "Rishav Dahal"
-  description: "Portfolio, blogs, and projects by Rishav Dahal on backend engineering, AI, and practical software development."
-  keywords: [Blog, Portfolio, Backend Development, AI, Machine Learning, Software Engineering, Python, Django]
+  description: "Portfolio, engineering blogs, and projects by Rishav Dahal — Backend & DevOps Engineer specializing in high-availability systems, cloud infrastructure, and AI integration."
+  keywords: [Portfolio, Backend Engineer, DevOps, Python, Django, FastAPI, Go, Cloud, Docker, CI/CD, Machine Learning, Rishav Dahal]
   author: "Rishav Dahal"
   images: ["images/default-og-image.jpg"]
   DateFormat: "January 2, 2006"
@@ -94,11 +94,11 @@ params:
   profileMode:
     enabled: true
     title: "Hi, I'm Rishav Dahal <span class=\"wave-emoji\">👋</span>"
-    subtitle: "Welcome to my digital lab! I build practical AI, backend systems, and share hands-on projects, blogs, and experiments in software engineering and machine learning."
+    subtitle: "Backend & DevOps Engineer bridging robust APIs, scalable cloud automation, and practical machine learning into high-availability production."
     imageUrl: "images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: "Software Engineer"
+    imageTitle: "Backend & DevOps Engineer"
     buttons:
       - name: Blogs
         url: blogs
@@ -112,7 +112,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "👋 Welcome to Rishav's Portfolio"
-    Content: "Explore my projects, blogs, and experiments in AI, backend engineering, and practical software development."
+    Content: "Explore my backend systems, cloud architectures, AI integrations, and practical software engineering writeups."
 
   socialIcons:
     - name: email

@@ -1,6 +1,6 @@
 ---
-title: "About"
-description: "Learn more about Rishav Dahal, a Software Engineer and AI researcher based in Nepal."
+title: "About Me"
+description: "Rishav Dahal is a Backend & DevOps Engineer specializing in scalable APIs, cloud automation, distributed databases, and production machine learning systems."
 date: 2025-01-10T10:00:00+05:45
 draft: false
 comments: false
@@ -8,47 +8,60 @@ disableShare: true
 hideMeta: true
 ShowPostNavLinks: false
 ---
-## Hello, I'm Rishav Dahal! 👋
 
-I'm a passionate **Software Engineering student** at Nepal College of Information Technology (NCIT) with a strong interest in **web development, AI, and creative problem-solving**. Currently based in Bhaktapur, Nepal, I thrive on building innovative projects that bridge technology and real-world needs.
+## Hi, I'm Rishav Dahal 👋
 
-### 🔧 What I Do  
-- **Full-Stack Development**: Crafting interactive websites and software applications using Python, Django, and modern frameworks.  
-- **AI & Machine Learning**: Developing solutions like medical chatbots, attendance systems, and OCR tools with NLP and computer vision.  
-- **Creative Design**: Designing graphics (Figma) and editing videos to bring ideas to life.  
+I am a **Backend & DevOps Engineer** based in Nepal. I bridge the gap between robust application logic and scalable cloud infrastructure—architecting high-availability backends, automating CI/CD pipelines, and productionizing machine learning systems into production environments.
 
-### 🚀 Projects & Achievements  
-- Built **Shiskhya** (lecture summarization software) and **Swashya** (centralized medical records app) during hackathons.  
-- Created a **BERT-based medical chatbot** and an **AI attendance system** using OpenCV and deep learning.  
-- Volunteered as an IT Coordinator and Graphic Designer for **HULT Prize at NCIT 2022**.  
-
-### 🛠️ Technical Skills
-
-**Programming Languages:**  
-`Python` `Java` `C` `C++` 
-
-**Web Development:**  
-`Django` `HTML/CSS` `PostgreSQL` `REST APIs`
-
-**AI/ML & Data Science:**  
-`OpenCV` `NLP` `Computer Vision` `TensorFlow`
-
-**Databases:**  
-`PostgreSQL`
-`SQL`
-
-**Tools & Platforms:**  
-`Git` `Figma` `Linux` `Docker` `Jira`
-
-### ✨ Beyond Code  
-- 📝 **Blogging** about tech breakthroughs  
-- 🎬 **Motion graphics** and video editing enthusiast  
-- 🌍 Fluent in **English**, **Nepali**, and **Hindi**  
+My engineering philosophy centers around simplicity, reliability, and automated scale: building systems that handle production workloads smoothly with minimal operational overhead.
 
 ---
 
-**Let's connect!**  
-📧 [workwithrisaav@gmail.com](mailto:workwithrisaav@gmail.com) | 🌐 [rishavdahal.com.np](https://rishavdahal.com.np)  
-💼 [LinkedIn](https://linkedin.com/in/risaavdahal) | 🐙 [GitHub](https://github.com/rishav-dahal)  
+### 🛠️ Core Specializations
 
-*"Turning ideas into impact, one line of code at a time."*
+- **Backend Architecture & APIs**: Designing resilient, modular microservices and high-throughput RESTful APIs using **Python (Django, FastAPI)** and **Go (Fiber)**.
+- **DevOps & Cloud Engineering**: Automating infrastructure-as-code, containerization, and continuous delivery pipelines with **Docker, GitHub Actions, Ansible, Terraform, AWS, and GCP**.
+- **Production Machine Learning & Computer Vision**: Transitioning models from prototypes to low-latency production inference pipelines using **OpenCV, OCR engines, NLP, and vector embeddings**.
+- **Database & Performance Optimization**: Designing normalized schemas, indexing strategies, and caching layers with **PostgreSQL, MySQL, and Redis**.
+
+---
+
+### 🧰 Technical Toolbox
+
+| Category | Technologies & Tools |
+|---|---|
+| **Languages** | Python, Go, C++, SQL, JavaScript |
+| **Backend & Frameworks** | Django, Django REST Framework, FastAPI, Go Fiber |
+| **DevOps & Cloud** | Docker, GitHub Actions, CI/CD, Ansible, Terraform, AWS, GCP, Nginx, Linux |
+| **Databases & Caching** | PostgreSQL, Redis, MySQL |
+| **AI / ML & Vision** | OpenCV, Scikit-learn, NLP, Semantic Search (LDA, Embeddings), Tesseract OCR |
+| **Tools & Workflows** | Git, Postman, Linux Shell / Bash, Jira, Figma |
+
+---
+
+### 🚀 Engineering Highlights & Research
+
+- **[eSewa Intent Payment Gateway Integration](/blogs/esewa-intent-api-v2-django/)**: Authored a comprehensive production engineering guide and integration architecture for eSewa's v2 Intent API in Django, covering HMAC-SHA256 signatures, resilient webhook callbacks, and production failsafes.
+- **[Modular Query Refinement (NLP & Semantic Search)](/projects/modular-query-refinement/)**: Researched and built a semantic search enhancement system that analyzes intent, context, and query expansion via Latent Dirichlet Allocation (LDA) and NLP.
+- **[OCR Code Compiler 2.0](/projects/ocr-code-compiler/)**: Developed an end-to-end computer vision pipeline for extracting source code from document images with perspective correction, adaptive binarization, and sandboxed code execution.
+- **[Face Recognition Attendance System](/projects/face-recognition-attendance-system/)**: Built an automated attendance tracking pipeline using deep face embeddings, OpenCV, and real-time camera feeds.
+- **DLPlatforms / DLSurf**: Architecting platform backends and scalable microservices.
+
+---
+
+### 🤝 Strategic Collaboration
+
+I actively collaborate with **early-stage startups, tech ventures, and engineering teams** looking for technical leadership to:
+- Build production-ready MVPs from zero to one.
+- Modernize and scale backend services.
+- Set up automated CI/CD and cloud deployment pipelines.
+- Integrate practical AI and computer vision models into real-world applications.
+
+---
+
+### 📬 Let's Connect
+
+- 📧 **Direct Email:** [workwithrisaav@gmail.com](mailto:workwithrisaav@gmail.com) / [contact@rishavdahal.com.np](mailto:contact@rishavdahal.com.np)
+- 💼 **LinkedIn:** [linkedin.com/in/risaavdahal](https://www.linkedin.com/in/risaavdahal/)
+- 🐙 **GitHub:** [github.com/rishav-dahal](https://github.com/rishav-dahal)
+- 🌍 **Website:** [rishavdahal.com.np](https://rishavdahal.com.np/)
